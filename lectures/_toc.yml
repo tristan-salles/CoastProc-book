@@ -4,4 +4,5 @@ options:
   numbered: true
 chapters:
   - file: oceandata
+  - file: waveclimate
   - file: zreferences
