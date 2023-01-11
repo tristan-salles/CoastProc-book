@@ -100,7 +100,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2. Bibliography" href="zreferences.html" />
+    <link rel="next" title="2. Analysing Wave Climate" href="waveclimate.html" />
     <link rel="prev" title="Coastal Processes, Environments &amp; Systems" href="intro.html" />
 
 <!-- Normal Meta Tags -->
@@ -280,7 +280,7 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="ocean-data-query">
 <h1><span class="section-number">1. </span>Ocean Data Query<a class="headerlink" href="#ocean-data-query" title="Permalink to this headline">¶</a></h1>
 <div style="text-align: center; margin-bottom: 2em;">
-  <iframe width="100%" height="350" src="https://www.youtube.com/embed/_3pQAYt9uNc?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/_3pQAYt9uNc?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <div class="section" id="coastal-ocean-observing-systems">
 <h2><span class="section-number">1.1. </span>Coastal Ocean Observing Systems<a class="headerlink" href="#coastal-ocean-observing-systems" title="Permalink to this headline">¶</a></h2>
@@ -397,6 +397,10 @@ A second attempt at a bathymetric map by Matthew Fontaine Maury, published in Th
 </div>
 <div class="section" id="modeling-analysis">
 <h2><span class="section-number">1.5. </span>Modeling &amp; Analysis<a class="headerlink" href="#modeling-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-to-access-the-notebooks-exercises-using-the-following-link admonition">
+<p class="admonition-title">To access the Notebooks exercises using the following link:</p>
+<p><a class="reference external" href="https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
+</div>
 <p>Prediction of future conditions is critical to deliver the full benefits of an ocean observing system. The Australian ocean and coastal modeling community is a partnership between multiple universities and national organisations (CSIRO, IMOS, GA, BOM to cite a few) that is being asked to provide greater resolution models that cover not only traditional physical water circulation, which remains a critical need, but also expand outputs to include inundation forecasting and ecosystem modeling.</p>
 <p>In May 2014, <a class="reference external" href="http://imos.org.au">IMOS</a> published the <strong>IMOS Strategy 2015-25</strong>. In this plan, one can read that:</p>
 <div class="admonition note">
@@ -445,9 +449,7 @@ A second attempt at a bathymetric map by Matthew Fontaine Maury, published in Th
 <p>In this first example (<code class="docutils literal notranslate"><span class="pre">OceanData1.ipynb</span></code>), we will work with the <a class="reference external" href="https://portal.aodn.org.au/search">IMOS Portal</a> using <a class="reference external" href="https://www.python.org">Python</a> via <a class="reference external" href="https://jupyter.org">Jupyter Notebooks</a>. There are several advantages of using Python as a general data analysis language and the notebook environment is a versatile tool that is designed to be interactive, user-friendly, open-source and sharable.</p>
 <p>We will see how to load NetCDF data into a Python environment, and show how to use the data once loaded.</p>
 </div>
-</div><!-- .. image:: https://mybinder.org/badge_logo.svg
-  :target: https://mybinder.org/v2/gh/TristanSalles/CoastProc/binder -->
-</div>
+</div></div>
 <div class="section" id="querying-and-analysis-coastal-ocean-radar-dataset">
 <h4><span class="section-number">1.5.2.2. </span>Querying and analysis Coastal Ocean Radar dataset<a class="headerlink" href="#querying-and-analysis-coastal-ocean-radar-dataset" title="Permalink to this headline">¶</a></h4>
 <div class="exercise admonition" id="oceandata-exercise-1">
@@ -455,15 +457,7 @@ A second attempt at a bathymetric map by Matthew Fontaine Maury, published in Th
 <div class="section" id="exercise-content">
 <p>In this second example (<code class="docutils literal notranslate"><span class="pre">OceanData2.ipynb</span></code>), the Australian Coastal Ocean Radar Network (<a class="reference external" href="https://portal.aodn.org.au/search">ACORN</a>) facility comprises a coordinated network of HF radars delivering real-time ocean surface velocity data. We will export the dataset file (<strong>NetCDF</strong>) for a given region and then we will plot the velocity field at a given time in a latitude/longitude grid.</p>
 </div>
-</div><!-- .. image:: https://mybinder.org/badge_logo.svg
-  :target: https://mybinder.org/v2/gh/TristanSalles/CoastProc/binder -->
-<!--
-..  admonition:: Quick view of buoy dataset for the Gold Coast
-    :class: toggle
-
-    .. image:: https://mybinder.org/badge_logo.svg
-      :target: https://mybinder.org/v2/gh/TristanSalles/CoastProc/binder -->
-</div>
+</div></div>
 </div>
 <div class="section" id="exercises-for-the-practical">
 <h3><span class="section-number">1.5.3. </span>Exercises for the Practical<a class="headerlink" href="#exercises-for-the-practical" title="Permalink to this headline">¶</a></h3>
@@ -474,8 +468,6 @@ A second attempt at a bathymetric map by Matthew Fontaine Maury, published in Th
 <li><p>Extract Ocean Radar dataset for Turquoise Bay from IMOS and plot them on a map.</p></li>
 </ul>
 <p>Download the practical documentation from Canvas website and answer the questions using: the <code class="docutils literal notranslate"><span class="pre">Waverider.ipynb</span></code> and <code class="docutils literal notranslate"><span class="pre">Oceanforecast.ipynb</span></code> notebook.</p>
-<!-- .. image:: https://mybinder.org/badge_logo.svg
-  :target: https://mybinder.org/v2/gh/TristanSalles/CoastProc/binder -->
 </div>
 </div>
 <div class="section" id="summary">
@@ -546,8 +538,13 @@ A second attempt at a bathymetric map by Matthew Fontaine Maury, published in Th
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="waveclimate.html">
+   2. Analysing Wave Climate
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="zreferences.html">
-   2. Bibliography
+   3. Bibliography
   </a>
  </li>
 </ul>

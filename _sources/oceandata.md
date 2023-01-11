@@ -15,7 +15,7 @@ kernelspec:
 # Ocean Data Query
 
 <div style="text-align: center; margin-bottom: 2em;">
-  <iframe width="100%" height="350" src="https://www.youtube.com/embed/_3pQAYt9uNc?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/_3pQAYt9uNc?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ## Coastal Ocean Observing Systems
@@ -171,6 +171,10 @@ name: AODN web portal.
 
 ## Modeling & Analysis
 
+```{admonition}  To access the Notebooks exercises using the following link:
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master)
+```
+
 Prediction of future conditions is critical to deliver the full benefits of an ocean observing system. The Australian ocean and coastal modeling community is a partnership between multiple universities and national organisations (CSIRO, IMOS, GA, BOM to cite a few) that is being asked to provide greater resolution models that cover not only traditional physical water circulation, which remains a critical need, but also expand outputs to include inundation forecasting and ecosystem modeling.
 
 In May 2014, [IMOS](http://imos.org.au) published the **IMOS Strategy 2015-25**. In this plan, one can read that:
@@ -212,10 +216,8 @@ Before starting the exercise, take some times to familiarise yourself with the e
 </div>
 
 After following the video and the introduction notebook, you will open the workspace in **binder** and from the bottom of the `IntroNotebook` notebook you will click on the **Ocean Data Query** link. It will open a folder containing exercises and practicals:
-
 * `OceanData1.ipynb` and `OceanData2.ipynb` are 2 exercises that complement what you learned during this lecture,
 * `Oceanforecast.ipynb` and `Waverider.ipynb` are Python notebooks that you will use for your practicals.
-
 
 #### Loading and checking IMOS NetCDF dataset
 
@@ -225,25 +227,12 @@ In this first example (`OceanData1.ipynb`), we will work with the [IMOS Portal](
 
 We will see how to load NetCDF data into a Python environment, and show how to use the data once loaded.
 ```
-<!-- .. image:: https://mybinder.org/badge_logo.svg
-  :target: https://mybinder.org/v2/gh/TristanSalles/CoastProc/binder -->
-
 
 #### Querying and analysis Coastal Ocean Radar dataset
 
 ```{exercise}
 In this second example (`OceanData2.ipynb`), the Australian Coastal Ocean Radar Network ([ACORN](https://portal.aodn.org.au/search)) facility comprises a coordinated network of HF radars delivering real-time ocean surface velocity data. We will export the dataset file (**NetCDF**) for a given region and then we will plot the velocity field at a given time in a latitude/longitude grid.
 ```
-<!-- .. image:: https://mybinder.org/badge_logo.svg
-  :target: https://mybinder.org/v2/gh/TristanSalles/CoastProc/binder -->
-
-
-<!--
-..  admonition:: Quick view of buoy dataset for the Gold Coast
-    :class: toggle
-
-    .. image:: https://mybinder.org/badge_logo.svg
-      :target: https://mybinder.org/v2/gh/TristanSalles/CoastProc/binder -->
 
 ### Exercises for the Practical
 
@@ -253,10 +242,6 @@ You will run a series of examples that will introduce some aspects of marine dat
 * Extract Ocean Radar dataset for Turquoise Bay from IMOS and plot them on a map.
 
 Download the practical documentation from Canvas website and answer the questions using: the `Waverider.ipynb` and `Oceanforecast.ipynb` notebook.
-
-<!-- .. image:: https://mybinder.org/badge_logo.svg
-  :target: https://mybinder.org/v2/gh/TristanSalles/CoastProc/binder -->
-
 
 ## Summary
 
