@@ -57,6 +57,7 @@ jobs:
         shell: bash -l {0}
         run: |
           jb build -W --keep-going lectures --path-output ./
+          cp quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css ./_build/html/_static
       # Deploy the book's HTML to gh-pages branch
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3

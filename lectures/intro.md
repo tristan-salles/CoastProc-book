@@ -12,14 +12,12 @@ Coastal Processes, Environments & Systems
 **Author**: [Tristan Salles](https://www.sydney.edu.au/science/about/our-people/academic-staff/tristan-salles.html)
 
 
-
-```{note} Course content
+```{admonition} Course content
+:class: toggle
 
 For this component of the unit, we will use:
-
 1. a _learning website_ where you will find all information relative to the lectures themselves: it contains some **notes**, **videos** and **exercises** for each weeks,
 2. a _web-based programming platform_ based on **Jupyter notebooks** that contains all the materials for the **exercises** and **practicals**.
-
 ```
 
 This part of the course focuses on coastal systems analysis using both ocean data from a variety of sources
