@@ -375,20 +375,21 @@ The **SAM**, also known as the **Antarctic Oscillation**, is the principal mode 
 
 Thus, climate oscillations can significantly modulate the wave climate around the globe, leading to diverse effects in different regions. Oscillations can also enhance or detract the effects of other oscillations, leading to complex interactions and influence on both atmospheric and wave climate.
 
-## Hands-on examples
+## Modeling & Analysis
 
 ```{admonition}  To access the Notebooks exercises using the following link:
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master)
 ```
 
+### Hands-on examples
+
 As we discussed, satellite radar altimeters can be used to determine significant wave height and wind speed. Analysis of past records bring new insights into inter-annual, seasonal and decadal variations of regional wave climates.
 
-For this part of the course and to illustrate what we've seen today, we will use **RADWave** a Python package that provides a mechanism to access altimeter datasets through web-enabled data services (**THREDDS**).
+For this part of the course and to illustrate what we've seen today, we will use [**RADWave**](https://radwave.readthedocs.io/en/latest/usage.html) a Python package that provides a mechanism to access altimeter datasets through web-enabled data services (**THREDDS**).
 
 We will work with the [Australian Ocean Data Network](https://portal.aodn.org.au/) database that spans from 1985-present and that has already been calibrated and validated.
 
 With this tool we will query a range of spatial and temporal scales altimeter parameters in specific geographical regions and calculate:
-
 * significant wave heights,
 * periods,
 * group velocities,
@@ -396,14 +397,15 @@ With this tool we will query a range of spatial and temporal scales altimeter pa
 * wave energy fluxes.
 
 Using **Jupyter Notebooks** as last week, you will:
-
 * Extract data from different regions along Australia and evaluate wave modal conditions and seasonal changes in climate variability. Then calculate long-term trends and associated modulation by large-scale climate oscillations.
 * Estimate the wave heights along Tropical Cyclone tracks.
 
-```{admonition} RADWave Package by Smith et al. (2020)
-:class: toggle
+### Exercises for the Practical
 
-<div style="text-align: center; margin-bottom: 2em;">
-<iframe width="100%" height="550" src="https://radwave.readthedocs.io/en/latest/usage.html?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+Long-term observational data sets of beach profile variability and underlying trends that have been measured regularly and uninterrupted for several decades are very rare. Only a few sites around the world have sustained routine decadal-scale monitoring of the coastline, with notable examples that include the US Army Corps of Engineers Field Research Facility in the United States, the Hazaki Oceanographical Research Station in Japan, and Narrabeen-Collaroy Beach in Australia (http://www.narrabeen.wrl.unsw.edu.au).
+
+```{note}
+These unique data sets are critical for understanding how beaches respond to processes over a range of time scales, including storms that last hours to days, inter-annual climatic cycles such as the El Niño-Southern Oscillation (ENSO), and longer-term processes such as mean sea level rise. This type of knowledge is essential for predictive modelling and for making appropriate coastal management and planning decisions.
 ```
+
+The purpose of this practical is to utilise online resource of beach profile data from Narrabeen-Collaroy Beach in New South Wales, Australia, to assess how the subaerial beach and the shoreline position vary (1) **spatially due to alongshore-variable wave conditions**, and (2) **over multiple time scales in response to changing wave conditions and climate cycles**.
