@@ -230,9 +230,21 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hands-on-examples">
-   2.5. Hands-on examples
+  <a class="reference internal nav-link" href="#modeling-analysis">
+   2.5. Modeling &amp; Analysis
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hands-on-examples">
+     2.5.1. Hands-on examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercises-for-the-practical">
+     2.5.2. Exercises for the Practical
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -536,14 +548,16 @@ Wind-wave origins for the Pacific Ocean, representing the multi-modal components
 <p>Thus, climate oscillations can significantly modulate the wave climate around the globe, leading to diverse effects in different regions. Oscillations can also enhance or detract the effects of other oscillations, leading to complex interactions and influence on both atmospheric and wave climate.</p>
 </div>
 </div>
-<div class="section" id="hands-on-examples">
-<h2><span class="section-number">2.5. </span>Hands-on examples<a class="headerlink" href="#hands-on-examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="modeling-analysis">
+<h2><span class="section-number">2.5. </span>Modeling &amp; Analysis<a class="headerlink" href="#modeling-analysis" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-to-access-the-notebooks-exercises-using-the-following-link admonition">
 <p class="admonition-title">To access the Notebooks exercises using the following link:</p>
 <p><a class="reference external" href="https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 </div>
+<div class="section" id="hands-on-examples">
+<h3><span class="section-number">2.5.1. </span>Hands-on examples<a class="headerlink" href="#hands-on-examples" title="Permalink to this headline">¶</a></h3>
 <p>As we discussed, satellite radar altimeters can be used to determine significant wave height and wind speed. Analysis of past records bring new insights into inter-annual, seasonal and decadal variations of regional wave climates.</p>
-<p>For this part of the course and to illustrate what we’ve seen today, we will use <strong>RADWave</strong> a Python package that provides a mechanism to access altimeter datasets through web-enabled data services (<strong>THREDDS</strong>).</p>
+<p>For this part of the course and to illustrate what we’ve seen today, we will use <a class="reference external" href="https://radwave.readthedocs.io/en/latest/usage.html"><strong>RADWave</strong></a> a Python package that provides a mechanism to access altimeter datasets through web-enabled data services (<strong>THREDDS</strong>).</p>
 <p>We will work with the <a class="reference external" href="https://portal.aodn.org.au/">Australian Ocean Data Network</a> database that spans from 1985-present and that has already been calibrated and validated.</p>
 <p>With this tool we will query a range of spatial and temporal scales altimeter parameters in specific geographical regions and calculate:</p>
 <ul class="simple">
@@ -558,11 +572,15 @@ Wind-wave origins for the Pacific Ocean, representing the multi-modal components
 <li><p>Extract data from different regions along Australia and evaluate wave modal conditions and seasonal changes in climate variability. Then calculate long-term trends and associated modulation by large-scale climate oscillations.</p></li>
 <li><p>Estimate the wave heights along Tropical Cyclone tracks.</p></li>
 </ul>
-<div class="toggle admonition">
-<p class="admonition-title">RADWave Package by Smith et al. (2020)</p>
-<div style="text-align: center; margin-bottom: 2em;">
-<iframe width="100%" height="550" src="https://radwave.readthedocs.io/en/latest/usage.html?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+<div class="section" id="exercises-for-the-practical">
+<h3><span class="section-number">2.5.2. </span>Exercises for the Practical<a class="headerlink" href="#exercises-for-the-practical" title="Permalink to this headline">¶</a></h3>
+<p>Long-term observational data sets of beach profile variability and underlying trends that have been measured regularly and uninterrupted for several decades are very rare. Only a few sites around the world have sustained routine decadal-scale monitoring of the coastline, with notable examples that include the US Army Corps of Engineers Field Research Facility in the United States, the Hazaki Oceanographical Research Station in Japan, and Narrabeen-Collaroy Beach in Australia (<a class="reference external" href="http://www.narrabeen.wrl.unsw.edu.au">http://www.narrabeen.wrl.unsw.edu.au</a>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These unique data sets are critical for understanding how beaches respond to processes over a range of time scales, including storms that last hours to days, inter-annual climatic cycles such as the El Niño-Southern Oscillation (ENSO), and longer-term processes such as mean sea level rise. This type of knowledge is essential for predictive modelling and for making appropriate coastal management and planning decisions.</p>
+</div>
+<p>The purpose of this practical is to utilise online resource of beach profile data from Narrabeen-Collaroy Beach in New South Wales, Australia, to assess how the subaerial beach and the shoreline position vary (1) <strong>spatially due to alongshore-variable wave conditions</strong>, and (2) <strong>over multiple time scales in response to changing wave conditions and climate cycles</strong>.</p>
 </div>
 </div>
 </div>
