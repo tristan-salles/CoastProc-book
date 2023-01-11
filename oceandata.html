@@ -615,18 +615,18 @@ A second attempt at a bathymetric map by Matthew Fontaine Maury, published in Th
                 <span class="label">Public</span>
                 <select id="launcher-public-input">
                 
-                    <option value="https://mybinder.org/v2/gh/TristanSalles/CoastProc/master?urlpath=tree/binder/oceandata.ipynb">BinderHub</option>
+                    <option value="https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master?urlpath=tree/oceandata.ipynb">BinderHub</option>
                 
                 </select>
                 <i class="fas fa-check-circle"></i>
             </li>
             <li class="launcher-private">
                 <span class="label">Private</span>
-                <input type="text" id="launcher-private-input" data-repourl="https://github.com/TristanSalles/CoastProc/binder" data-urlpath="tree/CoastProc/binder/oceandata.ipynb" data-branch=master>
+                <input type="text" id="launcher-private-input" data-repourl="https://github.com/tristan-salles/CoastProc-notebooks" data-urlpath="tree/CoastProc-notebooks/oceandata.ipynb" data-branch=master>
                 <i class="fas fa-check-circle"></i>
             </li>
             </ul>
-            <p class="launch"><a href="https://mybinder.org/v2/gh/TristanSalles/CoastProc/master?urlpath=tree/binder/oceandata.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <p class="launch"><a href="https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master?urlpath=tree/oceandata.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
             <script>
                 // QuantEcon Notebook Launcher
                 const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
@@ -657,8 +657,8 @@ A second attempt at a bathymetric map by Matthew Fontaine Maury, published in Th
                 const launcherPublic = document.getElementById('launcher-public-input');
                 const launcherPrivate = document.getElementById('launcher-private-input');
                 const pageName = "oceandata";
-                const repoURL = "https://github.com/TristanSalles/CoastProc/binder";
-                const urlPath = "tree/CoastProc/binder/oceandata.ipynb";
+                const repoURL = "https://github.com/tristan-salles/CoastProc-notebooks";
+                const urlPath = "tree/CoastProc-notebooks/oceandata.ipynb";
                 const branch = "master"
                 const launchNotebookLink = document.getElementById('advancedLaunchButton');
 
