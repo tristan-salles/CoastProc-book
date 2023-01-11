@@ -283,7 +283,7 @@ $$
 
 where $g$ is the gravitational acceleration, $\kappa$ the radian wave number (equal to $2\pi/L$, with $L$ the wave length), and $d$ is the water depth.
 
-In deep water, the celerity is dependent only on wave length $\sqrt{gL/2\pi$; in shallow water, it depends on depth ($\sqrt{gd}$).
+In deep water, the celerity is dependent only on wave length $\sqrt{gL/2\pi}$; in shallow water, it depends on depth ($\sqrt{gd}$).
 
 From wave celerity and wave length, we calculate wave front propagation (including refraction) based on a **Huygens-principle** method.
 
