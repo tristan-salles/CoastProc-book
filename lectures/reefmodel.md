@@ -131,7 +131,7 @@ Additionally, most datasets of carbonate systems are often linguistic, context-d
 ### Cellular Automata
 
 <div style="text-align: center; margin-bottom: 2em;">
-<iframe width="100%" height="550" src="https://www.youtube.com/embed/CgOcEZinQ2I?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/CgOcEZinQ2I?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 Cellular Automata (**CA**) are a type of discrete numerical model that have been used to simulate carbonate platform development. They can be entirely deterministic in their calculation, generate relatively complicated results from relatively simple rule-based computational algorithms, and are at least loosely related to biological concepts of space, competition, and population dynamics.
