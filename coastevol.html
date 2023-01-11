@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. Quantifying Coastal Changes &#8212; Coastal Processes</title>
+    <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+        <script>
+            MathJax = {
+            loader: {load: ['[tex]/boldsymbol', '[tex]/textmacros']},
+            tex: {
+                packages: {'[+]': ['boldsymbol', 'textmacros']},
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                processEscapes: true,
+                macros: {
+                    "argmax" : "arg\\,max",
+                    "argmin" : "arg\\,min",
+                    "col"    : "col",
+                    "Span"   :  "span",
+                    "epsilon": "\\varepsilon",
+                    "EE": "\\mathbb{E}",
+                    "PP": "\\mathbb{P}",
+                    "RR": "\\mathbb{R}",
+                    "NN": "\\mathbb{N}",
+                    "ZZ": "\\mathbb{Z}",
+                    "aA": "\\mathcal{A}",
+                    "bB": "\\mathcal{B}",
+                    "cC": "\\mathcal{C}",
+                    "dD": "\\mathcal{D}",
+                    "eE": "\\mathcal{E}",
+                    "fF": "\\mathcal{F}",
+                    "gG": "\\mathcal{G}",
+                    "hH": "\\mathcal{H}",
+                }
+            },
+            svg: {
+                fontCache: 'global',
+                scale: 0.92,
+                displayAlign: "center",
+            },
+            };
+        </script>
+    
+    
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"Exp": "\\operatorname{Exp}", "Binomial": "\\operatorname{Binomial}", "Poisson": "\\operatorname{Poisson}", "BB": "\\mathbb{B}", "EE": "\\mathbb{E}", "PP": "\\mathbb{P}", "RR": "\\mathbb{R}", "NN": "\\mathbb{N}", "ZZ": "\\mathbb{Z}", "dD": "\\mathcal{D}", "fF": "\\mathcal{F}", "lL": "\\mathcal{L}", "linop": "\\mathcal{L}(\\mathbb{B})", "linopell": "\\mathcal{L}(\\ell_1)"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="2. Analysing Wave Climate" href="waveclimate.html" />
+
+<!-- Normal Meta Tags -->
+<meta name="author" context="Tristan Salles" />
+<meta name="keywords" content="Python, Coastal Change, USYD, Wave Analysis, Geoscience Data" />
+<meta name="description" content=These lectures provides a short introduction to coastal systems analysis using both ocean data and numerical models, designed and written by Tristan Salles. />
+
+<!-- Twitter tags -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@salles_tristan" />
+<meta name="twitter:title" content="Quantifying Coastal Changes"/>
+<meta name="twitter:description" content="These lectures provides a short introduction to coastal systems analysis using both ocean data and numerical models, designed and written by Tristan Salles.">
+<meta name="twitter:creator" content="@salles_tristan">
+<meta name="twitter:image" content="https://iili.io/H7sltov.md.png">
+
+<!-- Opengraph tags -->
+<meta property="og:title" content="Quantifying Coastal Changes" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="None" />
+<meta property="og:image" content="https://iili.io/H7sltov.th.png" />
+<meta property="og:description" content="These lectures provides a short introduction to coastal systems analysis using both ocean data and numerical models, designed and written by Tristan Salles." />
+<meta property="og:site_name" content="Coastal Processes" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+<body>
+
+
+    <span id="top"></span>
+
+    <div class="qe-wrapper">
+
+        <div class="qe-main">
+
+            <div class="qe-page" id=coastevol>
+
+                <div class="qe-page__toc">
+
+                    <div class="inner">
+
+                        
+                        <div class="qe-page__toc-header">
+                            On this page
+                        </div>
+
+
+                        <nav id="bd-toc-nav" class="qe-page__toc-nav">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#context">
+   3.1. Context
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nearshore-and-beach-processes">
+   3.2. Nearshore and beach processes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wave-runup">
+     3.2.1. Wave runup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#beach-profiles">
+     3.2.2. Beach profiles
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coastline-evolution">
+   3.3. Coastline evolution
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#longshore-drift">
+     3.3.1. Longshore drift
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysing-shoreline-changes">
+     3.3.2. Analysing shoreline changes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#embayed-beaches">
+     3.3.3. Embayed beaches
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regional-scale-models">
+   3.4. Regional scale models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-for-the-practical">
+   3.5. Exercises for the Practical
+  </a>
+ </li>
+</ul>
+
+                            <p class="logo">
+                                
+                                    
+                                    <a href=https://www.sydney.edu.au/units><img src="_static/cp-logo-large.png" class="logo" alt="logo"></a>
+                                    
+                                
+                            </p>
+
+                            <p class="powered">Powered by <a href="https://jupyterbook.org/">Jupyter Book</a></p>
+
+                        </nav>
+
+                        <div class="qe-page__toc-footer">
+                            
+                            
+                            <p><a href="#top"><strong>Back to top</strong></a></p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="qe-page__header">
+
+                    <div class="qe-page__header-copy">
+
+                        <p class="qe-page__header-heading"><a href="intro.html">Coastal Processes</a></p>
+
+                        <p class="qe-page__header-subheading">Quantifying Coastal Changes</p>
+
+                    </div>
+
+                    <p class="qe-page__header-authors">Tristan Salles</p>
+
+                </div> <!-- .page__header -->
+
+
+
+                
+                <main class="qe-page__content" role="main">
+                    
+                    <div>
+                        
+  <div class="tex2jax_ignore mathjax_ignore section" id="quantifying-coastal-changes">
+<h1><span class="section-number">3. </span>Quantifying Coastal Changes<a class="headerlink" href="#quantifying-coastal-changes" title="Permalink to this headline">¶</a></h1>
+<div class="toggle important toggle-shown admonition">
+<p class="admonition-title">Chapter content</p>
+<p>In this chapter, you will investigate nearshore to beach processes from wave run-up to beach profiles. You will also look at different numerical approaches to analyse shoreline changes.</p>
+</div>
+<div style="text-align: center; margin-bottom: 2em;">
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/u5VBADNI_es?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="section" id="context">
+<h2><span class="section-number">3.1. </span>Context<a class="headerlink" href="#context" title="Permalink to this headline">¶</a></h2>
+<p>Small changes in the magnitude or direction of storm waves have the ability to profoundly disturb our coastlines by modifying beach stability and enhancing coastal erosion.</p>
+<p>The coastal region is the most heavily urbanised land zone in the world and is regarded as a critical resource in view of its recreational, environmental and economic importance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ocean coasts are affected by variations in mean sea level, extreme waves, storm surges and river flow through a range of physical processes. Recent intensification in mean wave energy, extreme coastal wave energy and oceanic wind speeds, coupled with rising sea levels, suggest that coastal areas will be exposed to increasing hazards in coming decades. It is therefore critical to observe and quantify changes along coastlines vulnerable to extreme as well as subtle changes in oceanographic forcing.</p>
+</div>
+</div>
+<div class="section" id="nearshore-and-beach-processes">
+<h2><span class="section-number">3.2. </span>Nearshore and beach processes<a class="headerlink" href="#nearshore-and-beach-processes" title="Permalink to this headline">¶</a></h2>
+<p>In this video, we will first look at the mechanisms that influences nearshore environments especially we will discuss the different temporal and spatial scales involved. Then, we will analyse which processes become dominant as waves propagate from offshore towards the coast. Finally, we will have a quick introduction to the existing models that can be used to simulate these processes.</p>
+<div style="text-align: center; margin-bottom: 2em;">
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/bbyb8OATcow?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="section" id="wave-runup">
+<h3><span class="section-number">3.2.1. </span>Wave runup<a class="headerlink" href="#wave-runup" title="Permalink to this headline">¶</a></h3>
+<p><strong>Wave runup</strong> refers to the final part of a wave’s journey as it travels from offshore onto the beach. It is observable by anyone who goes to the beach and watches the edge of the water <em>runup</em> and <em>rundown</em> the beach. It is comprised of two components:</p>
+<ul class="simple">
+<li><p><strong>setup</strong>: the height of the time averaged superelevation of the mean water level above the Still Water Level (<strong>SWL</strong>)</p></li>
+<li><p><strong>swash</strong>: the height of the time varying fluctuation of the instantaneous water level about the setup elevation</p></li>
+</ul>
+<p>Setup, swash and other components of Total Water Level (<strong>TWL</strong>) rise are shown in this handy figure below from <a class="reference external" href="https://www.nature.com/articles/s41598-017-01362-7">Vitousek et al. (2017)</a>.</p>
+<div class="figure align-center" id="the-water-level-components-that-contribute-to-coastal-flooding">
+<a class="reference internal image-reference" href="_images/runup.jpg"><img alt="_images/runup.jpg" src="_images/runup.jpg" style="width: 606.32px; height: 307.56px;" /></a>
+</div>
+<p style="text-align:center; font-size:12px;">
+The water-level components that contribute to coastal flooding from Vitousek et al. (2017).</p>
+<p>Wave runup can contribute a significant portion of the increase in TWL in coastal storms causing erosion and inundation. For example, <a class="reference external" href="https://doi.org/10.1016/j.coastaleng.2005.12.005">Stockdon et al. (2006)</a> collated data from numerous experiments, some of which showed wave runup 2% excedence heights in excess of 3 m during some storms.</p>
+<p>Given the impact such a large increase in TWL can have on coastlines, there has been much research conducted to try improve our understanding of wave runup processes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although there are many processes which can influence wave runup (such as nonlinear wave transformation, wave reflection, three-dimensional effects, porosity, roughness, permeability and groundwater), <strong>many attempts have been made to derive empirical relationships based on easily measurable parameters</strong>.</p>
+</div>
+<p>Typically, empirical wave runup models include:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_{s}\)</span>: significant wave height</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_{p}\)</span>: peak wave length</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span>: beach slope</p></li>
+</ul>
+<p>The <strong>py-wave-runup</strong> (<a class="reference external" href="https://github.com/chrisleaman/py-wave-runup">here</a>) is a Python package that implements different published wave runup empirical models based on <span class="math notranslate nohighlight">\(H_{s}\)</span>, <span class="math notranslate nohighlight">\(T_{p}\)</span>, and <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<div class="toggle important admonition">
+<p class="admonition-title">Wave runup models from the py-wave-runup model</p>
+<div style="text-align: center; margin-bottom: 2em;">
+<iframe width="100%" height="550" src="https://py-wave-runup.readthedocs.io/en/latest/models.html?rel=0#module-models" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+<p>Using <strong>py-wave-runup</strong> , we will evaluate the accuracy of the <a class="reference external" href="https://doi.org/10.1016/j.coastaleng.2005.12.005">Stockdon et al. (2006)</a> runup
+model. To do this, we will use the compiled wave runup observations provided by <a class="reference external" href="https://doi.org/10.1016/j.coastaleng.2018.10.006">Power et al (2018)</a>.</p>
+<p>The <a class="reference external" href="https://doi.org/10.1016/j.coastaleng.2005.12.005">Stockdon et al. (2006)</a> wave runup model comprises of two relationships, one for dissipative beaches (<em>i.e.</em> Iribarren number <span class="math notranslate nohighlight">\(\zeta &lt; 0.3\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+  R_{2} = 0.043(H_{s}L_{p})^{0.5}
+\]</div>
+<p>and a seperate relationship for intermediate and reflective beaches (<em>i.e.</em> Iribarren number <span class="math notranslate nohighlight">\(\zeta &gt; 0.3\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+  R_{2} = 1.1 \left( 0.35 \beta (H_{s}L_{p})^{0.5} + \frac{H_{s}L_{p}(
+    0.563 \beta^{2} +0.004)^{0.5}}{2} \right)
+\]</div>
+<div class="toggle tip admonition">
+<p class="admonition-title"><strong>Exercise</strong></p>
+<p>Open the <strong>BinderHub</strong> link in the menubar to assess 2 runup models and evaluate wave runup observations against the Iribarren number with the above link.</p>
+</div>
+</div>
+<div class="section" id="beach-profiles">
+<h3><span class="section-number">3.2.2. </span>Beach profiles<a class="headerlink" href="#beach-profiles" title="Permalink to this headline">¶</a></h3>
+<p>Sandy coastlines typically comprise two key parts: a <strong>beach</strong> and <strong>dune</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>beach</strong> is the section of sandy coast that is <em>mostly above water</em> (depending upon tide) and actively influenced by <em>waves</em>, while <strong>dunes</strong> are elevated mounds/ridges of sand at the <em>back of the beach</em>.</p>
+</div>
+<p>The interface between the beach and dune is often <em>characterised by a distinct change in ground slope</em> (with the dune having a steeper slope than the beach). Dunes are particularly important along sandy coastlines because they provide a natural barrier to coastal hazards such as storm-induced waves and surge. The capacity of sandy dunes to provide coastal hazard protection depends in large part on their geometry.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The location of the <strong>dune toe</strong> (the transition point between the beach and dune) is a key factor used in coastal erosion models and for assessing coastal vulnerability to hazards (<a class="reference external" href="https://journals.flvc.org/jcr/article/view/80902">Sallenger, 2000</a>).</p>
+</div>
+<p>Domain experts are generally able to identify the location of the dune toe given a 2D beach profile. However, recent improvements in coastal monitoring technologies (such as optical, Lidar, and satellite remote sensing), have resulted in a significant increase in coastal topographic data, for which analysis by an expert is infeasible. As a result, there has been increased need for reliable and efficient algorithms for extracting important features such as dune toes from these large coastal datasets.</p>
+<p>There are many different algorithms currently available for automatically detecting the dune toe on 2D cross-shore beach profiles:</p>
+<ol class="simple">
+<li><p><strong>Maximum curvature</strong> (<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0025322706003355?via%3Dihub">Stockdon et al., 2007</a>) - the dune toe is defined as the location of maximum slope change;</p></li>
+<li><p><strong>Relative relief</strong> (<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0169555X16300630?via%3Dihub">Wernette et al. 2016</a>) - the dune toe is defined based on relative relief (the ratio of local morphology to computational scale);</p></li>
+<li><p><strong>Perpendicular distance</strong> - the dune toe is defined as the point of maximum perpendicular distance from the straight line drawn between the dune crest and shoreline; and,</p></li>
+<li><p><strong>Machine learning</strong> (ML) using Random Forest classification.</p></li>
+</ol>
+<div class="figure align-center" id="example-applications-of-pybeach">
+<a class="reference internal image-reference" href="_images/pybeach.jpg"><img alt="_images/pybeach.jpg" src="_images/pybeach.jpg" style="width: 563.85px; height: 391.86px;" /></a>
+</div>
+<div class="toggle important admonition">
+<p class="admonition-title">Locating the dune toe using Machine Learning</p>
+<p>As shown in the figure above using <strong>pybeach</strong> code from <a class="reference external" href="https://github.com/TomasBeuzen/pybeach">Beuzen</a> the performance of these algorithms in extracting dune toe locations on beach profiles varies significantly.  While experts can generally identify the dune toe on a beach profile, it is difficult to develop an algorithm that can consistently and reliably define the dune toe for the large variety of beach profile shapes encountered in nature.</p>
+<p>In such cases, the use of machine learning (ML) can help improving toe detection. It consists in <em>feeding</em> the ML algorithm with existing dataset. In <strong>pybeach</strong> three pre-trained ML models are provided:</p>
+<ol class="simple">
+<li><p>a <strong>barrier-island</strong> model. This model was developed using 1046 pre- and post- “Hurricane Ivan” airborne LIDAR profiles from Santa-Rosa Island Florida (this data was collected in 2004);</p></li>
+<li><p>a <strong>wave-embayed</strong> model. This model was developed using 1768 pre- and post- “June 2016 storm” airborne LIDAR profiles from the wave-dominated, embayed southeast Australian coastline (this data was collected in 2016).</p></li>
+<li><p>a <strong>mixed</strong> model. Developed using a combination of the two above datasets.</p></li>
+</ol>
+<p>For each dataset described above, the true location of the dune toe on each individual profile transect was manually identified and quality checked by multiple experts and verified using satellite imagery, digital elevation models and/or in-situ observations where available. This resulted in the best possible data to facilitate the creation of the ML models in <strong>pybeach</strong>.</p>
+<p>Within <strong>BinderHub</strong>, you could have a look at how <strong>pybeach</strong> could be used to locate the dune toe on cross-shore beach profile transects.</p>
+</div>
+</div>
+</div>
+<div class="section" id="coastline-evolution">
+<h2><span class="section-number">3.3. </span>Coastline evolution<a class="headerlink" href="#coastline-evolution" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="longshore-drift">
+<h3><span class="section-number">3.3.1. </span>Longshore drift<a class="headerlink" href="#longshore-drift" title="Permalink to this headline">¶</a></h3>
+<p>Longshore drift is induced by longshore current and transport sediments (clay, silt, pebbles, sand and shingle) along coastlines parallel to the shoreline and depends on oblique incoming wave direction.</p>
+<p>Oblique incoming waves push water along the coast, and generate a water current which moves parallel to the coast. Longshore drift is the sediment movement associated with this longshore current. This sediment movement occurs within the surf zone.</p>
+<div class="toggle toggle-shown admonition">
+<p class="admonition-title">One-line model</p>
+<p>This video explains how longshore drift is simulated using 1-line model.</p>
+<div style="text-align: center; margin-bottom: 2em;">
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/9s9kkQu2JZg?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+<p>As we have seen in the previous video, one-line models of shoreline evolution can reproduce embayed beach morphology in the lee of a headland or promontory. They are based on simple rules to describe the adjustment in wave height and direction due to diffraction in the shadow of a promontory and demonstrated that the resulting bay forms were similar in form to a logarithmic spiral.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/cove2.jpg"><img alt="_images/cove2.jpg" src="_images/cove2.jpg" style="width: 636.87px; height: 243.57000000000002px;" /></a>
+</div>
+<p>In one-line models, the shoreline is represented by a single line (or contour) that advances or retreats depending on the net alongshore sediment flux. One-line models make a number of simplifying assumptions to conceptualise the coastline allowing the ‘one-line’ representation of the coastline:</p>
+<ol class="simple">
+<li><p>Short-term cross-shore variations due to storms or rip currents are considered temporary perturbations to the long-term trajectory of coastal change (i.e. the shoreface recovers rapidly from storm-driven cross-shore transport).</p></li>
+<li><p>The beach profile is thus assumed to maintain a constant time-averaged form, implying that depth contours are shore-parallel and therefore allows the coast to be represented by a single contour line (right panels in top figure).</p></li>
+<li><p>Alongshore sediment transport occurs primarily in the surf zone, and cross-shore sediment transport acts to maintain the equilibrium shoreface as it advances /retreats.</p></li>
+<li><p>Alongshore sediment flux occurs due to wave action in the surf zone, parameterized by the height and angle of incidence of breaking waves. Gradients in alongshore transport dictate whether the shoreline advances or retreats.</p></li>
+</ol>
+<p>Bulk alongshore sediment flux is driven by waves breaking on the shoreface. Typically in alongshore transport laws, flux depends on the height <span class="math notranslate nohighlight">\(H_b\)</span> and angle <span class="math notranslate nohighlight">\(\alpha_b\)</span> of breaking waves. For example, the <strong>CERC equation</strong> is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+    Q_{ls} = K_{ls} H_b^{5/2} sin(2\alpha_b)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(K_{ls}\)</span> is a transport coefficient. The transport coefficient <span class="math notranslate nohighlight">\(K_{ls}\)</span> may be modified to account for the size of beach material (<span class="math notranslate nohighlight">\(D_{50}\)</span>). Calibration of this coefficient can be made from estimates of bulk alongshore transport or by calibration against a historical record of coastal change (<em>e.g.</em> <a class="reference external" href="http://www.earth-surf-dynam.net/2/295/2014/esurf-2-295-2014.html">Barkwith et al. (2014)</a>).</p>
+</div>
+<div class="section" id="analysing-shoreline-changes">
+<h3><span class="section-number">3.3.2. </span>Analysing shoreline changes<a class="headerlink" href="#analysing-shoreline-changes" title="Permalink to this headline">¶</a></h3>
+<p>Space-borne observations have been employed in a wide range of change detection applications, including the analysis of meandering river morphodynamics, delineation of wetland footprints and identification of oil spills.</p>
+<p>Recently, optical imaging satellites have begun to be used to measure the location of the shoreline, which is regarded by coastal managers, planners, engineers and scientists as a key indicator of how coastlines vary and evolve over time.</p>
+<p>Nowadays, it is possible to use image composites from satellites to map the position of the shoreline with a horizontal accuracy of the order of half a pixel (i.e., <strong>15 m</strong> for Landsat images and <strong>5 m</strong> for Sentinel-2 images).  Some studies have even managed to detect  shoreline at a sub-pixel resolution technique in low-energy microtidal beach and reported horizontal accuracies of less than 10 m using Landsat 7, Landsat 8 and Sentinel-2 images.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Satellite remote sensing can provide low-cost long-term shoreline data capable of analysing multi-decadal temporal changes relevant to coastal scientists and engineers at sites where no in-situ field measurements are available.</p>
+</div>
+<p><a class="reference external" href="https://github.com/kvos/CoastSat">CoastSat</a> is an example of such open-source package developed at the Water Research Laboratory in Manly that can be used to obtain time-series of shoreline position at any coastline worldwide from 30+ years (and growing) of publicly available satellite imagery.</p>
+<p>It enables the non-expert user to extract shorelines from Landsat 5, Landsat 7, Landsat 8 and Sentinel-2 images. The shoreline detection algorithm implemented in <strong>CoastSat</strong> is optimised for sandy beach coastlines. It combines a sub-pixel border segmentation and an image classification component, which refines the segmentation into four distinct categories such that the shoreline detection is specific to the sand/water interface.</p>
+<div style="text-align: center; margin-bottom: 2em;">
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/YK_d08BHids?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p>The toolbox has three main functionalities:</p>
+<ol class="simple">
+<li><p>assisted retrieval from Google Earth Engine of all available satellite images spanning the user-defined region of interest and time period.</p></li>
+<li><p>automated extraction of shorelines from all the selected images using a sub-pixel resolution technique</p></li>
+<li><p>intersection of the 2D shorelines with user-defined shore-normal transects</p></li>
+</ol>
+<div class="figure align-center" id="example-region-of-interest-within-rgb-image-located-at-narrabeen-collaroy-in-southeast-australia-sentinel-2">
+<a class="reference internal image-reference" href="_images/coastsat.jpg"><img alt="_images/coastsat.jpg" src="_images/coastsat.jpg" style="width: 561.0px; height: 309.8px;" /></a>
+</div>
+<p style="text-align:center; font-size:12px;">
+Example region of interest within RGB image located at Narrabeen-Collaroy in southeast Australia, Sentinel-2 (using CoastSat)..</p>
+</div>
+<div class="section" id="embayed-beaches">
+<h3><span class="section-number">3.3.3. </span>Embayed beaches<a class="headerlink" href="#embayed-beaches" title="Permalink to this headline">¶</a></h3>
+<p>The curved planform morphology of embayed beaches can be observed at various length-scales at coastlines, from a few hundred meters to several kilometers. These bays occur in the lee of headlands or man-made coastal structures where erosion and/or littoral drift is inhibited in the face of a dominant direction of wave incidence (<a class="reference external" href="http://onlinelibrary.wiley.com/doi/10.1002/2015JF003704/abstract">Hurst et al., 2015</a>). A highly concave portion of shoreline forms on the down-drift side of the headland where the coastline is shadowed from the dominant wave direction and subject to waves that diffract around the headland.</p>
+<div class="figure align-center" id="crenulated-bay-shapes-at-different-scales">
+<a class="reference internal image-reference" href="_images/cove1.jpg"><img alt="_images/cove1.jpg" src="_images/cove1.jpg" style="width: 641.47px; height: 345.0px;" /></a>
+</div>
+<p style="text-align:center; font-size:12px;">
+Examples of crenulated bay shapes at different scales from <a href="http://onlinelibrary.wiley.com/doi/10.1002/2015JF003704/abstract>" target="_blank">Hurst et al. (2015)</a>: (a) Hathead Bay, Eastern Australia. (b) Flamborough Head and the Holderness Coastline, East Yorkshire, UK. (c) Half Moon Bay, California, USA</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Embayed beaches tend toward an equilibrium form under a prevailing wave climate. The planform morphology will adjust until gradients in alongshore sediment flux are minimised (net alongshore sediment flux is constant). Alongshore sediment flux will be negligible on an equilibrium coastline when there are no external sediment inputs. Subsequent changes in planform morphology may occur such as beach rotation, driven by changes in wave climate characteristics that alter alongshore sediment transport.</p>
+</div>
+</div>
+</div>
+<div class="section" id="regional-scale-models">
+<h2><span class="section-number">3.4. </span>Regional scale models<a class="headerlink" href="#regional-scale-models" title="Permalink to this headline">¶</a></h2>
+<p>Many complex models exist to evaluate the complex interactions between ocean hydrodynamics and sediment transport like <a class="reference external" href="http://oss.deltares.nl/web/xbeach/">XBeach</a>, <a class="reference external" href="https://www.myroms.org">ROMS</a>, <a class="reference external" href="https://oss.deltares.nl/web/delft3d">Delft3d</a>, <a class="reference external" href="http://fvcom.smast.umassd.edu">FVCOM</a>, <a class="reference external" href="https://csdms.colorado.edu/wiki/Model:CEM">CEM</a> to cite a few.</p>
+<div class="figure align-center" id="nearshore-zonation">
+<a class="reference internal image-reference" href="_images/zone.jpg"><img alt="_images/zone.jpg" src="_images/zone.jpg" style="width: 672.0px; height: 307.25px;" /></a>
+</div>
+<p>As an example, the nearshore wave propagation model <a class="reference external" href="http://oss.deltares.nl/web/xbeach/">XBeach</a> solves coupled 2D horizontal equations for wave propagation, flow, sediment transport and bottom changes, for varying (spectral) wave and flow boundary conditions. It is a public-domain model that can be used as stand-alone model for small-scale (project-scale) coastal applications, but could also be integrated within more complex coupling frameworks. For example, it could be driven by boundary conditions provided by wind, wave or surge models and its main outputs (time-varying bathymetry and possibly discharges over breached barrier island sections) could be then transferred back.</p>
+<!-- ..  admonition:: Wave transformation and sediment transport during storm
+    :class: toggle, important
+
+
+    .. image:: https://mybinder.org/badge_logo.svg
+      :target: https://mybinder.org/v2/gh/TristanSalles/CoastProc/xbeach?urlpath=tree/CoastProc/Notebooks/notebooks/DelflandStorm/Delfland.ipynb
+
+    Here you will run a `XBeach <http://oss.deltares.nl/web/xbeach/>`_ model using a profile along the Dutch coast and by imposing the waves boundary condition based on the 1953 storm surge that caused substantial flooding in the Netherlands. -->
+<p>Now, we will look at a more simple approach based on a <strong>reduced complexity model</strong> that adopts the most basic known principles of wave motion, <em>i.e.</em>, the linear wave theory (Airy derived <a class="reference external" href="https://en.wikipedia.org/wiki/Airy_wave_theory">wave parameters description</a>). Wave celerity <span class="math notranslate nohighlight">\(c\)</span> is governed by:</p>
+<div class="math notranslate nohighlight">
+\[
+  c = \sqrt{\frac{g}{\kappa} tanh \, \kappa d}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(g\)</span> is the gravitational acceleration, <span class="math notranslate nohighlight">\(\kappa\)</span> the radian wave number (equal to <span class="math notranslate nohighlight">\(2\pi/L\)</span>, with <span class="math notranslate nohighlight">\(L\)</span> the wave length), and <span class="math notranslate nohighlight">\(d\)</span> is the water depth.</p>
+<p>In deep water, the celerity is dependent only on wave length <span class="math notranslate nohighlight">\(\sqrt{gL/2\pi}\)</span>; in shallow water, it depends on depth (<span class="math notranslate nohighlight">\(\sqrt{gd}\)</span>).</p>
+<p>From wave celerity and wave length, we calculate wave front propagation (including refraction) based on a <strong>Huygens-principle</strong> method.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Wave diffraction &amp; refraction</p>
+<div style="text-align: center; margin-bottom: 2em;">
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/KvOJ0o6Eqw4?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+<p>From this, we deduce the wave travel time and define main wave-induced current directions from lines perpendicular to the wave front. Wave height is then calculated along wave front propagation. The algorithm takes into account wave energy dissipation in shallow environment as well as wave-breaking conditions.</p>
+<p>As mentioned above, shoaling and refraction are accounted for from a series of deep-water wave conditions through time in the absence of wind forcing. Hence to compute wave field generation, the model requires <strong>bathymetric conditions</strong> and definitions of offshore significant <strong>wave height</strong>, characteristic <strong>period</strong>, and wave <strong>direction</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To evaluate marine sediment transport over several thousands of years, the approach taken here does not examine temporal evolving wave fields, such as those produced during storm events and relies on stationary representation of prevailing fair-weather wave conditions. The wave transformation model is generally performed for time intervals varying from 5 to 50 years.</p>
+</div>
+<p>The model simulates realistic wave fields by imposing a sequence of wave forcing conditions. At any given time interval, we define a percentage of activity for each deep-water wave conditions and the bathymetry is used to compute associated wave parameters.</p>
+<p>To simulate wave-induced sediment transport, it is necessary to model the <strong>water movement near the bottom</strong>. The wave height <span class="math notranslate nohighlight">\(H\)</span> and the wave period <span class="math notranslate nohighlight">\(T\)</span> govern the maximum wave-orbital speed <span class="math notranslate nohighlight">\(u_{w,b}\)</span> at the bed at any given depth and is expressed using the <strong>linear wave theory</strong> as:</p>
+<div class="math notranslate nohighlight">
+\[
+  u_{w,b} = \frac{\pi H}{T sinh \kappa d}
+\]</div>
+<p>assuming the linear shallow water approximation (Soulsby), the expression is further simplified as:</p>
+<div class="math notranslate nohighlight">
+\[
+  u_{w,b} = (H/2) \sqrt{g/d}
+\]</div>
+<p>Under pure waves (<em>i.e.</em>, no superimposed current), the wave-induced bed shear stress <span class="math notranslate nohighlight">\(\tau_{w}\)</span> is typically defined as a quadratic bottom friction:</p>
+<div class="math notranslate nohighlight">
+\[
+  \tau_{w} = \frac{1}{2} \rho f_w u_{w,b}^2
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(rho\)</span> the water density and <span class="math notranslate nohighlight">\(f_w\)</span> is the wave friction factor. Considering that the wave friction factor is only dependent of the bed roughness <span class="math notranslate nohighlight">\(k_b\)</span> relative to the wave-orbital semi-excursion at the bed <span class="math notranslate nohighlight">\(A_b\)</span> (Soulsby), we define:</p>
+<div class="math notranslate nohighlight">
+\[
+  f_{w} = 1.39 (A_b/k_b)^{-0.52}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(A_b = u_{w,b}T/2\pi\)</span> and <span class="math notranslate nohighlight">\(k_b = 2\pi d_{50}/12\)</span>, with <span class="math notranslate nohighlight">\(d_{50}\)</span> median sediment grain-size at the bed.</p>
+<p>For each forcing conditions, the wave transformation model computes and returns:</p>
+<ul class="simple">
+<li><p>the significant wave height,</p></li>
+<li><p>the mean wave direction and</p></li>
+<li><p>the shear stress induced by the maxima of the orbital velocity near the bottom.</p></li>
+</ul>
+<p>These parameters are subsequently used to evaluate the <strong>long-term sediment transport</strong> active over the simulated region.</p>
+<div class="figure align-center" id="wave-rays-approaching-shallow-regions">
+<a class="reference internal image-reference" href="_images/wavesed1.jpg"><img alt="_images/wavesed1.jpg" src="_images/wavesed1.jpg" style="width: 769.44px; height: 320.04px;" /></a>
+</div>
+<p style="text-align:center; font-size:12px;">
+Wave rays approaching shallow regions.</p>
+<p>In nearshore environments, longshore current runs parallel to the shore and is generated by the radiation stresses associated with the breaking process from obliquely incoming waves and by the surplus water which is carried across the breaker zone towards the shoreline (<a class="reference external" href="http://onlinelibrary.wiley.com/doi/10.1002/2015JF003704/abstract">Hurst et al., 2015</a>]. This current significantly contributes to sediment transport in nearshore waters.</p>
+<p>Following Komar, the longshore current velocity (<span class="math notranslate nohighlight">\(\vec{v_l}\)</span>) in the middle of the breaking zone is defined by:</p>
+<div class="math notranslate nohighlight">
+\[
+  \vec{v_l} = \kappa_l u_{w,b} cos(\theta) sin(\theta) \vec{k}
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\theta\)</span> the angle of incidence of the incoming waves, <span class="math notranslate nohighlight">\(\kappa_l\)</span> a scaling parameter and <span class="math notranslate nohighlight">\(\vec{k}\)</span> the unit vector parallel to the breaking depth contour.</p>
+<p>For wave rays approaching shallow regions at on oblique angle, the component of wave energy flux parallel to the shore will drives this longshore velocity. The calculation of the angle of incidence is deduced from bathymetric contour and wave directions (obtained from the wave transformation model) and requires an estimate of wave breaking depth (user defined parameter <em>wavebase</em>).</p>
+<p>From the definition of bed sediment mean grain size, the adimensional particle parameter <span class="math notranslate nohighlight">\(d_\star\)</span> is first derived:</p>
+<div class="math notranslate nohighlight">
+\[
+  d_\star = d_{50} \left[ \left( s-1 \right) \frac{g}{\nu^2} \right]^{1/3}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(s=\rho_s/\rho\)</span> is the relative density and <span class="math notranslate nohighlight">\(\nu\)</span> the kinematic viscosity. Then the threshold Shields parameter <span class="math notranslate nohighlight">\(\theta_c\)</span> is calculated based on Van Rijn formulation.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{cases}
+  \theta_c = 0.24/d_\star &amp; \text{if } \theta_c \leq 4\\
+  \theta_c = 0.14 d_\star^{-0.64} &amp; \text{if } 10 \geq \theta_c &gt; 4\\
+  \theta_c = 0.04 d_\star^{-0.1} &amp; \text{if } 20 \geq \theta_c &gt; 10\\
+  \theta_c = 0.013 d_\star^{0.29} &amp; \text{if } 150 \geq \theta_c &gt; 20\\
+  \theta_c = 0.055 &amp; \text{if } \theta_c &gt; 150
+  \end{cases}
+\end{split}\]</div>
+<p>In regions where wave-induced shear stress is greater than the critical shear stress derived from the Shields parameter (<span class="math notranslate nohighlight">\(\tau_c = \theta_c gd_{50}(\rho_s-\rho_w)\)</span>), bed sediments are entrained. The erosion thickness <span class="math notranslate nohighlight">\(h_e\)</span> is limited to the top sedimentary layer and for simplicity is assumed to follow a logarithmic form:</p>
+<div class="math notranslate nohighlight">
+\[
+  h_e = C_e \ln(\tau_w/\tau_c) \textrm{ where } \tau_w &gt; \tau_c
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_e\)</span> is an entrainment coefficient controlling the relationship between shear stress and erosion rate. Once entrained, sediments are transported following the direction of longshore currents and are deposited in regions where wave shear stress is lower than the critical shear stress for entrainment.</p>
+<div class="figure align-center" id="nearshore">
+<a class="reference internal image-reference" href="_images/wavesed2.jpg"><img alt="_images/wavesed2.jpg" src="_images/wavesed2.jpg" style="width: 699.0px; height: 409.75px;" /></a>
+</div>
+<p style="text-align:center; font-size:12px;">
+Example of outputs from the reduced complexity model.</p>
+<p>Marine sediments are further mobilised by a diffusion law similar to the one referred to as soil creep in the aerial domain to simulate long-term sediment dispersal induced by slope.</p>
+<div class="toggle tip toggle-shown admonition">
+<p class="admonition-title">Long-term, reduced complexity model</p>
+<p>Click on the <strong>BinderHub</strong> button in the menubar to run the described long-term model around Fraser Island.</p>
+</div>
+</div>
+<div class="section" id="exercises-for-the-practical">
+<h2><span class="section-number">3.5. </span>Exercises for the Practical<a class="headerlink" href="#exercises-for-the-practical" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-to-access-the-notebooks-exercises-using-the-following-link admonition">
+<p class="admonition-title">To access the Notebooks exercises using the following link:</p>
+<p><a class="reference external" href="https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
+</div>
+<p>Through these exercises, you will use <strong>beach survey program</strong> to evaluate long term changes in shoreline trajectory and run <strong>longshore drift models</strong> to evaluate the impact of wave height and direction on embayed beaches morphologies.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You will need to download the practical information sheet available from <strong>Canvas</strong>.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                    </div>
+                    
+                </main> <!-- .page__content -->
+                
+
+
+                <footer class="qe-page__footer">
+
+                    <p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png"></a></p>
+
+                    <p>Creative Commons License &ndash; This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International.</p>
+
+                </footer> <!-- .page__footer -->
+
+            </div> <!-- .page -->
+
+            
+
+            
+            <div class="qe-sidebar bd-sidebar inactive" id="site-navigation">
+
+                <div class="qe-sidebar__header">
+
+
+                    Contents
+
+                </div>
+
+                <nav class="qe-sidebar__nav" id="qe-sidebar-nav" aria-label="Main navigation">
+                    <ul class="current nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="oceandata.html">
+   1. Ocean Data Query
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="waveclimate.html">
+   2. Analysing Wave Climate
+  </a>
+ </li>
+ <li class="toctree-l1 current active active">
+  <a class="current reference internal" href="#">
+   3. Quantifying Coastal Changes
+  </a>
+ </li>
+</ul>
+
+                </nav>
+
+                <div class="qe-sidebar__footer">
+
+                </div>
+
+            </div> <!-- .sidebar -->
+            
+        </div> <!-- .main -->
+
+        <div class="qe-toolbar">
+
+            <div class="qe-toolbar__inner">
+
+                <ul class="qe-toolbar__main">
+                    <li data-tippy-content="Table of Contents" class="btn__sidebar"><i data-feather="menu"></i></li>
+                    <li data-tippy-content="Home"><a href="intro.html"><i data-feather="home"></i></a></li>
+                    <li class="btn__qelogo"><a href="https://www.sydney.edu.au/units" title=""><span class="show-for-sr">CoastProc</span></a></li>
+                    <!-- <li class="btn__search">
+                        <form action="search.html" method="get">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off">
+                            <i data-feather="search"></i>
+                        </form>
+                    </li> -->
+                </ul>
+
+                <ul class="qe-toolbar__links">
+                    <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
+                    <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
+                    <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
+                    <li data-tippy-content="Change contrast" class="btn__contrast"><i data-feather="sunset"></i></li>
+                    <li data-tippy-content="Download Notebook"><a href="_notebooks/coastevol.ipynb" download><i data-feather="download-cloud"></i></a></li>
+                    <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
+                        <li class="download-pdf" id="downloadButton"><i data-feather="file"></i></li>
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/tristan-salles/CoastProc-book/tree/master/lectures/coastevol.md" download><i data-feather="github"></i></a></li>
+                </ul>
+
+            </div>
+
+        </div> <!-- .toolbar -->
+        <div id="downloadPDFModal" style="display: none;">
+            <ul class="pdf-options" style="display: block;">
+                <li class="download-pdf-book" onClick="window.print()">
+                    <p>Lecture (PDF)</p>
+                </li>
+                <li class="download-pdf-file">
+                    <a href="_pdf/book.pdf" download><p>Book (PDF)</p></a>
+                </li>
+            </ul>
+        </div>
+        <div id="settingsModal" style="display: none;">
+            <p class="modal-title"> Notebook Launcher </p>
+            <div class="modal-desc">
+            <p>
+                Choose public or private cloud service for "Launch" button.
+            </p>
+            </div>
+            <p class="modal-subtitle">Select a server</p>
+            <ul class="modal-servers">
+            <li class="active launcher-public">
+                <span class="label">Public</span>
+                <select id="launcher-public-input">
+                
+                    <option value="https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master?urlpath=tree/coastevol.ipynb">BinderHub</option>
+                
+                </select>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            <li class="launcher-private">
+                <span class="label">Private</span>
+                <input type="text" id="launcher-private-input" data-repourl="https://github.com/tristan-salles/CoastProc-notebooks" data-urlpath="tree/CoastProc-notebooks/coastevol.ipynb" data-branch=master>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            </ul>
+            <p class="launch"><a href="https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master?urlpath=tree/coastevol.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <script>
+                // QuantEcon Notebook Launcher
+                const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
+                // Highlight the server type if previous selection exists
+                if (typeof localStorage.launcherType !== 'undefined') {
+                  for (var i = 0; i < launcherTypeElements.length; i++) {
+                    launcherTypeElements[i].classList.remove('active');
+                    if ( launcherTypeElements[i].classList.contains(localStorage.launcherType) ) {
+                      launcherTypeElements[i].classList.add('active');
+                    }
+                  }
+                }
+                // Highlight server type on click and set local storage value
+                for (var i = 0; i < launcherTypeElements.length; i++) {
+                  launcherTypeElements[i].addEventListener('click', function() {
+                    for (var j = 0; j < launcherTypeElements.length; j++) {
+                      launcherTypeElements[j].classList.remove('active');
+                    }
+                    this.classList.add('active');
+                    if ( this.classList.contains('launcher-private') ) {
+                      localStorage.launcherType = 'launcher-private';
+                    } else if ( this.classList.contains('launcher-public') ) {
+                      localStorage.launcherType = 'launcher-public';
+                    }
+                    setLaunchServer();
+                  })
+                }
+                const launcherPublic = document.getElementById('launcher-public-input');
+                const launcherPrivate = document.getElementById('launcher-private-input');
+                const pageName = "coastevol";
+                const repoURL = "https://github.com/tristan-salles/CoastProc-notebooks";
+                const urlPath = "tree/CoastProc-notebooks/coastevol.ipynb";
+                const branch = "master"
+                const launchNotebookLink = document.getElementById('advancedLaunchButton');
+
+                // Highlight public server option if previous selection exists
+                if (typeof localStorage.launcherPublic !== 'undefined') {
+                  launcherPublic.value = localStorage.launcherPublic;
+                }
+                // Update local storage upon public server selection
+                launcherPublic.addEventListener('change', (event) => {
+                  setLaunchServer();
+                });
+                // Populate private server input if previous entry exists
+                if (typeof localStorage.launcherPrivate !== 'undefined') {
+                  launcherPrivate.value = localStorage.launcherPrivate;
+                }
+                // Update local storage when a private server is entered
+                launcherPrivate.addEventListener('input', (event) => {
+                  setLaunchServer();
+                });
+
+                // Function to update the "Launch Notebook" link href
+                function setLaunchServer() {
+                  launchNotebookLink.removeAttribute("style")
+                  if ( localStorage.launcherType == 'launcher-private' ) {
+                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    launcherPrivateValue = launcherPrivate.value
+                    if (!launcherPrivateValue) {
+                        launchNotebookLink.removeAttribute("href")
+                        launchNotebookLink.style.background = "grey"
+                        return
+                    }
+                    localStorage.launcherPrivate = launcherPrivateValue;
+                    privateServer = localStorage.launcherPrivate.replace(/\/$/, "")
+                    if (!privateServer.includes("http")) {
+                        privateServer = "http://" + privateServer
+                    }
+                    launchNotebookLinkURL = privateServer + repoPrefix;
+                  } else if ( localStorage.launcherType == 'launcher-public' ) {
+                    launcherPublicValue = launcherPublic.options[launcherPublic.selectedIndex].value;
+                    localStorage.launcherPublic = launcherPublicValue;
+                    launchNotebookLinkURL = localStorage.launcherPublic;
+                  }
+                  if (launchNotebookLinkURL) launchNotebookLink.href = launchNotebookLinkURL;
+                }
+                // Check if user has previously selected a server
+                if ( (typeof localStorage.launcherPrivate !== 'undefined') || (typeof localStorage.launcherPublic !== 'undefined') ) {
+                  setLaunchServer();
+                }
+                </script>
+
+        </div>
+
+    </div> <!-- .wrapper-->
+    
+  </body>
+</html>
