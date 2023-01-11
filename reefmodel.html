@@ -1,0 +1,705 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4. Coral Reef Evolution &#8212; Coastal Processes, Environments and Systems</title>
+    <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+        <script>
+            MathJax = {
+            loader: {load: ['[tex]/boldsymbol', '[tex]/textmacros']},
+            tex: {
+                packages: {'[+]': ['boldsymbol', 'textmacros']},
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                processEscapes: true,
+                macros: {
+                    "argmax" : "arg\\,max",
+                    "argmin" : "arg\\,min",
+                    "col"    : "col",
+                    "Span"   :  "span",
+                    "epsilon": "\\varepsilon",
+                    "EE": "\\mathbb{E}",
+                    "PP": "\\mathbb{P}",
+                    "RR": "\\mathbb{R}",
+                    "NN": "\\mathbb{N}",
+                    "ZZ": "\\mathbb{Z}",
+                    "aA": "\\mathcal{A}",
+                    "bB": "\\mathcal{B}",
+                    "cC": "\\mathcal{C}",
+                    "dD": "\\mathcal{D}",
+                    "eE": "\\mathcal{E}",
+                    "fF": "\\mathcal{F}",
+                    "gG": "\\mathcal{G}",
+                    "hH": "\\mathcal{H}",
+                }
+            },
+            svg: {
+                fontCache: 'global',
+                scale: 0.92,
+                displayAlign: "center",
+            },
+            };
+        </script>
+    
+    
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/quantecon-book-theme.1ef59f8f4e91ec8319176e8479c6af4e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/quantecon-book-theme.15b0c36fffe88f468997fa7b698991d3.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="3. Quantifying Coastal Changes" href="coastevol.html" />
+
+<!-- Normal Meta Tags -->
+<meta name="author" context="Tristan Salles" />
+<meta name="keywords" content="Python, Coastal Change, USYD, Wave Analysis, Geoscience Data" />
+<meta name="description" content=These lectures provides a short introduction to coastal systems analysis using both ocean data and numerical models, designed and written by Tristan Salles. />
+
+<!-- Twitter tags -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@salles_tristan" />
+<meta name="twitter:title" content="Coral Reef Evolution"/>
+<meta name="twitter:description" content="These lectures provides a short introduction to coastal systems analysis using both ocean data and numerical models, designed and written by Tristan Salles.">
+<meta name="twitter:creator" content="@salles_tristan">
+<meta name="twitter:image" content="https://iili.io/H7sltov.md.png">
+
+<!-- Opengraph tags -->
+<meta property="og:title" content="Coral Reef Evolution" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="None" />
+<meta property="og:image" content="https://iili.io/H7sltov.th.png" />
+<meta property="og:description" content="These lectures provides a short introduction to coastal systems analysis using both ocean data and numerical models, designed and written by Tristan Salles." />
+<meta property="og:site_name" content="Coastal Processes, Environments and Systems" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+<body>
+
+
+    <span id="top"></span>
+
+    <div class="qe-wrapper">
+
+        <div class="qe-main">
+
+            <div class="qe-page" id=reefmodel>
+
+                <div class="qe-page__toc">
+
+                    <div class="inner">
+
+                        
+                        <div class="qe-page__toc-header">
+                            On this page
+                        </div>
+
+
+                        <nav id="bd-toc-nav" class="qe-page__toc-nav">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#main-physical-forces-acting-on-carbonate-platform">
+   4.1. Main physical forces acting on carbonate platform
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accommodation">
+     4.1.1. Accommodation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hydrodynamic-energy">
+     4.1.2. Hydrodynamic energy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sediment-input">
+     4.1.3. Sediment input
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coral-reef-modelling-approaches">
+   4.2. Coral reef modelling approaches
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cellular-automata">
+     4.2.1. Cellular Automata
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fuzzy-logic">
+     4.2.2. Fuzzy logic
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelling-gbr-past-evolution">
+   4.3. Modelling GBR past evolution
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evolution-since-last-glacial-maximum">
+     4.3.1. Evolution since Last Glacial Maximum
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#influence-of-carbonate-platform-on-geomorphological-development-of-the-margin">
+     4.3.2. Influence of carbonate platform on geomorphological development of the margin
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hands-on-examples">
+   4.4. Hands-on examples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-model-of-coral-assemblages-evolution-not-used-from-2022">
+     4.4.1. 1D model of coral assemblages evolution (not used from 2022)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#carbonate-platform-evolution-since-the-last-lgm">
+     4.4.2. Carbonate platform evolution since the last LGM
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#miscellaneous">
+   4.5. Miscellaneous
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-game-of-life">
+     4.5.1. The Game of Life
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                            <p class="logo">
+                                
+                                    
+                                    <a href=https://www.sydney.edu.au/units><img src="_static/cp-logo-large.png" class="logo" alt="logo"></a>
+                                    
+                                
+                            </p>
+
+                            <p class="powered">Powered by <a href="https://jupyterbook.org/">Jupyter Book</a></p>
+
+                        </nav>
+
+                        <div class="qe-page__toc-footer">
+                            
+                            
+                            <p><a href="#top"><strong>Back to top</strong></a></p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="qe-page__header">
+
+                    <div class="qe-page__header-copy">
+
+                        <p class="qe-page__header-heading"><a href="intro.html">Coastal Processes, Environments and Systems</a></p>
+
+                        <p class="qe-page__header-subheading">Coral Reef Evolution</p>
+
+                    </div>
+
+                    <p class="qe-page__header-authors">Tristan Salles</p>
+
+                </div> <!-- .page__header -->
+
+
+
+                
+                <main class="qe-page__content" role="main">
+                    
+                    <div>
+                        
+  <div class="tex2jax_ignore mathjax_ignore section" id="coral-reef-evolution">
+<h1><span class="section-number">4. </span>Coral Reef Evolution<a class="headerlink" href="#coral-reef-evolution" title="Permalink to this headline">¶</a></h1>
+<div class="toggle important toggle-shown admonition">
+<p class="admonition-title">Chapter content</p>
+<p>In this chapter, we will discuss the dynamics of coral reefs with a focus on their long term evolution. We will see different types of modelling approaches that focus on long-term (century to millennial scale) and large-scale (regional to continental) evolution.</p>
+</div>
+<div style="text-align: center; margin-bottom: 2em;">
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/7r4fu9abxt8?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p>Amongst the approaches available to study coral reef platform formation, <strong>Stratigraphic Forward Modelling</strong> (SFM) has become a powerful tool. SFM simulates processes acting over geologic timescales and consists in iteratively refining parameters to improve the match between observed and predicted morphologies and stratigraphies. Through this iterative procedure, it helps to <em>evaluate</em> and <em>quantify</em> parameters that cannot be observed directly such as sedimentation or carbonate production rates. In that sense, SFMs address the short-comings of qualitative investigation techniques applied to carbonate systems.</p>
+<div class="section" id="main-physical-forces-acting-on-carbonate-platform">
+<h2><span class="section-number">4.1. </span>Main physical forces acting on carbonate platform<a class="headerlink" href="#main-physical-forces-acting-on-carbonate-platform" title="Permalink to this headline">¶</a></h2>
+<p>Corals are calcium-carbonate-secreting, and their ability to grow and build reef structures is dependent upon favourable environmental conditions. Environmental factors affecting growth have been classified by <a class="reference external" href="https://books.google.com.au/books/about/Corals_in_Space_and_Time.html?id=piQvtbFUicAC&amp;redir_esc=y">Veron (1995)</a> as <strong>latitude-correlated</strong> factors, and those that are <strong>regional or local</strong> in character.</p>
+<div class="figure align-center" id="schematic-figure-of-a-hypothetical-reef">
+<a class="reference internal image-reference" href="_images/pyreef.jpg"><img alt="_images/pyreef.jpg" src="_images/pyreef.jpg" style="width: 704.6999999999999px; height: 340.95px;" /></a>
+</div>
+<p style="text-align:center; font-size:12px;">
+Schematic figure of a hypothetical reef with transitions from shallow to deep assemblages occurring down-core, illustrating growth-form responses of corals to environmental forcing including light, sea level changes (sl), hydrodynamic energy (w wave conditions and c currents), tectonic (u uplift and s subsidence), oceanic conditions (T temperature, nu nutrients, pH acidity), karstification (k) and sediment flux.</p>
+<p>Latitude-correlated factors include sea surface temperatures (SSTs), solar radiation and water chemistry. These factors are likely to be affected most by climate change, potentially shifting the <em>optimal</em> environmental suitability for coral calcification toward the poles.</p>
+<p>Regional and local environmental factors include wave climate, salinity, water clarity, nutrient influx, sedimentation regime and depth/composition of the initial substrate. These factors affect coral species to different extents, controlling the distribution of coral communities across a reef. Over longer time scales, they also shape the rate of calcium-carbonate production, framework building by corals, and the accumulation of sedimentary deposits.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Despite the significant, short-term impacts cyclonic storms and terrigenous sediment input have on reef systems, pulse disturbances are smoothed out on geologic scales where reef systems are characterised by remarkable persistence and resilience. The slow and persistent factors (<em>e.g.</em>, sedimentation, wave climate and accommodation) are those that exert a stronger effect on the distribution of coralgal communities across a reef.</p>
+</div>
+<div class="section" id="accommodation">
+<h3><span class="section-number">4.1.1. </span>Accommodation<a class="headerlink" href="#accommodation" title="Permalink to this headline">¶</a></h3>
+<p>Accommodation is the vertical and lateral space in the water column above the substrate within which corals can grow. The effect of accommodation on coral growth is the most well-understood constraint on the waxing and waning of reef growth, governed by the rate of vertical accretion of reefs, sea-level rise, subsidence and uplift.</p>
+<p>Accommodation affects coral growth in two ways:</p>
+<ul class="simple">
+<li><p>Firstly, light attenuates with depth in the ocean, and as corals are photosynthetic organisms, carbonate production decreases with increasing water depth.</p></li>
+<li><p>Secondly, wave energy and water flow also decreases with depth, such that corals growing with reduced accommodation (<em>i.e.</em>, in shallow depth) experience increased hydrodynamic energy.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The effect of light is assumed to dominate over the effect of water movement in limiting carbonate production, however both effects play a role in determining coral composition and, in turn, rates of vertical accretion.</p>
+</div>
+<p>Generally, assemblages within 20 m depth have the highest accretion rates (10-20 m/kyr) than those deeper (&lt; 10 m/kyr). Holocene reef growth largely occurred due to initially rapid sea-level rise (∼10-6 ka), which created new accommodation and favourable conditions for reef ‘<strong>turn-on</strong>’ on the Great Barrier Reef (GBR). Some reefs were able to keep pace with sea level rise (‘<strong>keep-up</strong>’ reefs), while others caught up after sea level stabilised (‘<strong>catch-up</strong>’ reefs), and others drowned (‘<strong>give-up</strong>’ reefs).</p>
+<div class="toggle toggle-shown admonition">
+<p class="admonition-title">Examples of reef architecture evolution modelling</p>
+<p>The 2 movies above are based on a numerical model of reef architecture evolution proposed <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/epdf/10.1002/2017GC007335">Husson et al. (2018)</a> and illustrate the response of reef productivity to the changing pace of sea level oscillations during Pleistocene under different tectonic settings.</p>
+<div style="text-align: center; margin-bottom: 2em;">
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/0kCfb56AdLw?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div style="text-align: center; margin-bottom: 2em;">
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/DhXHPzpyVPs?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+<div class="section" id="hydrodynamic-energy">
+<h3><span class="section-number">4.1.2. </span>Hydrodynamic energy<a class="headerlink" href="#hydrodynamic-energy" title="Permalink to this headline">¶</a></h3>
+<p>At the organism level, <strong>currents</strong>, <strong>water flow</strong> and <strong>oscillatory motion</strong> induced by waves are critical in modulating physiological processes in coral and thus influencing coral growth rates.</p>
+<p>High water flow increases rates of photosynthesis by symbiotic algae, nutrient uptake by corals, particle capture and facilitates sediment removal from coral surfaces, all of which contribute to enhanced primary production.</p>
+<p>At the extremes, too little flow can be lethal in corals by inducing anaerobiosis, whereas extreme wave events cause mechanical destruction and can lead to long-term changes in community diversity and structure.</p>
+<div class="figure align-center" id="coral-reef-structural-complexity-provides-important-coastal-protection-from-waves-under-rising-sea-levels">
+<a class="reference internal image-reference" href="_images/harris.jpg"><img alt="_images/harris.jpg" src="_images/harris.jpg" style="width: 630.0px; height: 301.8px;" /></a>
+</div>
+<p style="text-align:center; font-size:12px;">Coral reef structural complexity provides important coastal protection from waves under rising sea levels (from <a href="https://advances.sciencemag.org/content/4/2/eaao4350" target="_blank">Harris et al. 2018</a>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Waves exert a strong spatial control on hydrodynamics of reef systems. Wave energy is dissipated on shallow reefs from bottom friction and wave breaking, with the former effect dominating the latter on reefs with high surface rugosity of coral communities (<a class="reference external" href="https://advances.sciencemag.org/content/4/2/eaao4350">Harris et al. 2018</a>). Furthermore the geomorphology and high-rugosity of reefs cause wave refraction, such that wave energy is highest on the ocean-facing margin (<strong>exposed setting</strong>) and lower in back reef (<strong>protected setting</strong>) lagoonal and marginal environments that are protected from the prevailing winds and wave energy. As a result, wave-induced bottom stress strongly influences coral cover and community composition.</p>
+</div>
+<p>While overall, corals tend to grow more rapidly in higher-flow environments, high wave energy also has a depressive effect on reef growth in shallow (&lt;6 m) environments. Field studies demonstrate that coral communities form where species that are capable of thriving in particular hydrodynamic conditions grow together and adopt forms suitable to those conditions. Hence, wave-induced bottom stress affects community organisation spatially, with a clear zonation pattern from the reef crest to the reef slopes.</p>
+</div>
+<div class="section" id="sediment-input">
+<h3><span class="section-number">4.1.3. </span>Sediment input<a class="headerlink" href="#sediment-input" title="Permalink to this headline">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>High fluxes of both terrigenous and autochthonous sediments are widely identified to have both direct and indirect inhibitory effects on coral reef growth.</p>
+</div>
+<p>Firstly, elevated turbidity <strong>attenuates ambient photosynthetically active radiation</strong> (PAR), which inhibits the ability of corals to meet energy requirements through photosynthesis. Secondly, smothering and abrasion by sediment blankets can <strong>impair feeding and cause physical damage and direct mortality</strong>.</p>
+<p>While the lethality of sediment exposure is determined by the intensity and duration to exposure, generally the long-lasting impact of turbidity regimes is known to depress coral growth and survival. For instance, elevated turbidity on mid-outer platform reefs caused by the suspension of sediment on the Pleistocene GBR reef substrate during initial flooding ∼9 ka is hypothesised to be responsible for a delayed initiation of coralgal growth.</p>
+<p>Autochthonous carbonate gravels and sediments (<em>i.e.</em> aragonite, calcite and high-magnesium calcite), produced by the growth and mechanical destruction of reef organisms through physical, biochemical and bio-erosive processes, are important determinants of the spatial and temporal distribution of coralgal communities on long timescales.</p>
+<p>Prevailing wave and current conditions of even moderate energy resuspended fine-grained carbonate sediments are key in generating stable turbidity regimes on reef systems, particularly in lagoons, on leeward rims and on reef slopes at moderate depths due to the decreasing water energy gradient both laterally and with depth.
+Similarly, prevailing turbid conditions are less common at shallow sites, especially on the windward rim due to wave-driven sediment removal.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The spatial variation of suspended sediment loads is a critical environmental factor influencing coral community distribution across the reef and with depth. Turbid conditions are inimical to certain communities such as shallow-water corals, yet some species and communities are tolerant of elevated turbidity conditions on leeward rims or species that thrive on reef slopes at depth. Hence, the spatial variation in turbidity is reflected in coral community distribution both across the reef and with depth.</p>
+</div>
+</div>
+</div>
+<div class="section" id="coral-reef-modelling-approaches">
+<h2><span class="section-number">4.2. </span>Coral reef modelling approaches<a class="headerlink" href="#coral-reef-modelling-approaches" title="Permalink to this headline">¶</a></h2>
+<p>The organisation of coral reef systems is known to be large and complex and <strong>we are still limited in our understanding of their temporal and spatial evolution</strong>.</p>
+<p>Additionally, most datasets of carbonate systems are often linguistic, context-dependent, and based on measurements with large uncertainties. Alternative modelling approaches, such as <strong>fuzzy logic</strong> or <strong>cellular automata</strong> algorithms, have proven to be viable options to simulate these types of system.</p>
+<div class="section" id="cellular-automata">
+<h3><span class="section-number">4.2.1. </span>Cellular Automata<a class="headerlink" href="#cellular-automata" title="Permalink to this headline">¶</a></h3>
+<div style="text-align: center; margin-bottom: 2em;">
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/CgOcEZinQ2I?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p>Cellular Automata (<strong>CA</strong>) are a type of discrete numerical model that have been used to simulate carbonate platform development. They can be entirely deterministic in their calculation, generate relatively complicated results from relatively simple rule-based computational algorithms, and are at least loosely related to biological concepts of space, competition, and population dynamics.</p>
+<p><strong>CA</strong> are composed of a regular grid of cells, each of which has one of a finite, usually small, number of possible states. Cell state is determined with reference to surrounding cells some specified distance away, for example, one or two cells distant. Other cells within this surrounding area are referred to as the current cell’s neighbourhood.</p>
+<div class="toggle important admonition">
+<p class="admonition-title">Cellular automata applications to coral reef</p>
+<p>Application of simple rules, for example, based on the number of cells in the neighbourhood with the same state, is used to determine the future state of a cell at the next iteration, or generation, of a cell.</p>
+<p>Results from <strong>CARBOCAT</strong> model illustrate the potential of cellular automata models for generating simulated heterogeneous platform top strata and hence better understanding the origins of carbonate heterogeneities found in natural systems (from <a class="reference external" href="http://instaar.colorado.edu/~jenkinsc/carboClinic/carboCAT/carboCAT.pdf">Burgess 2013</a>).</p>
+<div class="figure align-center" id="burgess-ca-model">
+<a class="reference internal image-reference" href="_images/CA1.jpg"><img alt="_images/CA1.jpg" src="_images/CA1.jpg" style="width: 1158.6599999999999px; height: 358.34px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="fuzzy-logic">
+<h3><span class="section-number">4.2.2. </span>Fuzzy logic<a class="headerlink" href="#fuzzy-logic" title="Permalink to this headline">¶</a></h3>
+<p><strong>Fuzzy logic</strong> methods are able to create <em>logical propositions</em> from qualitative data by using <strong>linguistic logic rules</strong> and <strong>fuzzy sets</strong>. These fuzzy sets are defined with either continuous or crisp (discontinuous) boundaries.</p>
+<p>Based on a fuzzy logic approach, carbonate system evolution can be driven entirely by a set of rules whose variables are fully adjustable. The utility and effectiveness of the approach is mostly based on the user’s understanding of the modelled carbonate system. The technique is specifically useful to estimate how particular variable, in isolation or in combination with other factors, influences carbonate depositional geometries and reef adaptation.</p>
+<div class="figure align-center" id="fuzzy-logic-model-of-carbonate-reef">
+<a class="reference internal image-reference" href="_images/fuzzy.jpg"><img alt="_images/fuzzy.jpg" src="_images/fuzzy.jpg" style="width: 629.74px; height: 454.94px;" /></a>
+</div>
+<p>In the example of fuzzy logic set above, carbonate growth depends on three types of control variables:</p>
+<ul class="simple">
+<li><p><strong>depth</strong> (or accommodation space),</p></li>
+<li><p><strong>wave energy</strong> (derived from ocean bottom orbital velocity) and</p></li>
+<li><p><strong>sedimentation rate</strong>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For each of these variables, one can define a range of fuzzy sets using membership functions. A membership function is a curve showing the degree of truth (i.e. ranging between 0 and 1) of membership in a particular fuzzy set. These curves can be simple triangles, trapezoids, bell-shaped curves, or have more complicated shapes as shown above.</p>
+</div>
+<p>Production of any specific coral assemblage is then computed from a series of fuzzy rules. A fuzzy rule is a logic <strong>if-then</strong> rule defined from the fuzzy sets.</p>
+<p>In the above algorithm, the combination of the fuzzy sets in each fuzzy rule is restricted to the <strong>and</strong> operator. The amalgamation of competing fuzzy rules is usually referred to as a <strong>fuzzy system</strong>. Summation of multiple rules from the fuzzy system by truncation of the membership functions produces a fuzzy answer in the form of a membership set. The last step consists in computing a single number for this fuzzy set through <strong>defuzzification</strong>.</p>
+</div>
+</div>
+<div class="section" id="modelling-gbr-past-evolution">
+<h2><span class="section-number">4.3. </span>Modelling GBR past evolution<a class="headerlink" href="#modelling-gbr-past-evolution" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="evolution-since-last-glacial-maximum">
+<h3><span class="section-number">4.3.1. </span>Evolution since Last Glacial Maximum<a class="headerlink" href="#evolution-since-last-glacial-maximum" title="Permalink to this headline">¶</a></h3>
+<p>Using <a class="reference external" href="https://www.nature.com/articles/s41598-018-23519-8">badlands</a>, a reduced-complexity model developed in the School of Geosciences, we compute over geological time: sediment transport from landmasses to coasts, reworking of marine sediments by longshore currents, and development of coral reef systems.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The code links together the main sedimentary processes driving mixed siliciclastic-carbonate system dynamics. It offers a methodology for objective and quantitative sediment fate estimations over regional and millennial time-scales.</p>
+</div>
+<div class="toggle important admonition">
+<p class="admonition-title">Examples of badlands simulation for the entire GBR.</p>
+<div style="text-align: center; margin-bottom: 2em;">
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/x_w0925mmgo?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div style="text-align: center; margin-bottom: 2em;">
+<iframe width="100%" height="350" src="https://www.youtube.com/embed/-aimu4MV0JE?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+<p>Simulations of the Holocene evolution of the Great Barrier Reef show: (1) how high sediment loads from catchments erosion prevented coral growth during the early transgression phase and favoured sediment gravity-flows in the deepest parts of the northern region basin floor (prior to 8 ka before present (BP)); (2) how the fine balance between climate, sea-level, and margin physiography enabled coral reefs to thrive under limited shelf sedimentation rates after ~6 ka BP; and, (3) how since 3 ka BP, with the decrease of accommodation space, reduced of vertical growth led to the lateral extension of reefs consistent with available observational data.</p>
+</div>
+<div class="section" id="influence-of-carbonate-platform-on-geomorphological-development-of-the-margin">
+<h3><span class="section-number">4.3.2. </span>Influence of carbonate platform on geomorphological development of the margin<a class="headerlink" href="#influence-of-carbonate-platform-on-geomorphological-development-of-the-margin" title="Permalink to this headline">¶</a></h3>
+<p>Sedimentation regimes on the Great Barrier Reef margin often do not confine to more conventional sequence stratigraphic models, presenting difficulties when attempting to identify key processes that control the margin’s geomorphological evolution.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By obstructing and modifying down-shelf and down-slope flows, carbonate platforms are thought to play a central role in altering the distribution and morphological presentation of common margin features.</p>
+</div>
+<p>Using <a class="reference external" href="https://www.nature.com/articles/s41598-018-23519-8">badlands</a>, we can test the role of the carbonate platforms in reproducing several features (<em>i.e.</em> paleochannels, shelf-confined fluvial sediment mounds, shelf-edge deltas, canyons, and surface gravity flows) that have been described from observational data (seismic sections, multibeam bathymetry, sediment cores, and backscatter imagery).</p>
+<p>When carbonate platforms are present in model simulations, several notable geomorphological features appear, especially during lowstand. Upon exposure of the shelf, platforms reduce stream power, promoting mounding of fluvial sediments around platforms. On the outer shelf, rivers and streams are re-routed and coalesce between platforms, depositing shelf-edge deltas and incising paleochannels through knickpoint retreat.</p>
+<div class="figure align-center" id="gbr-geomorphology-induced-by-carbonate-platform">
+<a class="reference internal image-reference" href="_images/carbsmandi.jpg"><img alt="_images/carbsmandi.jpg" src="_images/carbsmandi.jpg" style="width: 501.29999999999995px; height: 328.32px;" /></a>
+</div>
+<p style="text-align:center; font-size:12px;">
+GBR geomorphology induced by carbonate platform from <a href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2020GC008915" target="_blank">Thran et al. (2020)</a>.</p>
+<p>Additionally, steep platform topography triggers incision of slope canyons by hyperpycnal flows, and platforms act as conduits for the delivery of land and shelf-derived sediments to the continental slope and basin. When platforms are absent from the topographic surface, the model is unable to reproduce many of these features.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Results demonstrate the essential role of carbonate platform topography in modulating key bedload processes, and therefore exert direct control on the development of various geomorphological features within the shelf, slope, and basin environments.</p>
+</div>
+</div>
+</div>
+<div class="section" id="hands-on-examples">
+<h2><span class="section-number">4.4. </span>Hands-on examples<a class="headerlink" href="#hands-on-examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="d-model-of-coral-assemblages-evolution-not-used-from-2022">
+<h3><span class="section-number">4.4.1. </span>1D model of coral assemblages evolution (not used from 2022)<a class="headerlink" href="#d-model-of-coral-assemblages-evolution-not-used-from-2022" title="Permalink to this headline">¶</a></h3>
+<p>Using <a class="reference external" href="https://www.geosci-model-dev.net/11/2093/2018/"><strong>pyReef</strong> model</a>, we will simulate  typical sequences of coral assemblages found in the GBR based on different initial conditions.</p>
+<div class="figure align-center" id="pyreef-model-example">
+<a class="reference internal image-reference" href="_images/pyreef1.jpg"><img alt="_images/pyreef1.jpg" src="_images/pyreef1.jpg" style="width: 654.12px; height: 395.83000000000004px;" /></a>
+</div>
+<p style="text-align:center; font-size:12px;">**pyReef** model outputs used in this exercise.</p>
+</div>
+<div class="section" id="carbonate-platform-evolution-since-the-last-lgm">
+<h3><span class="section-number">4.4.2. </span>Carbonate platform evolution since the last LGM<a class="headerlink" href="#carbonate-platform-evolution-since-the-last-lgm" title="Permalink to this headline">¶</a></h3>
+<p>With <a class="reference external" href="https://www.nature.com/articles/s41598-018-23519-8">badlands</a>, you will simulate the evolution of a carbonate platform over the last 10,000 years accounting for the impact of waves, sediment transport and sea-level changes.</p>
+<!-- .. image:: https://mybinder.org/badge_logo.svg
+  :target: https://mybinder.org/v2/gh/badlands-model/badlands-docker/binder?urlpath=tree/gbr/runModel.ipynb -->
+<p>Click on the link above to start running the simulation in a <strong>Jupyter Notebook</strong>.</p>
+</div>
+</div>
+<div class="section" id="miscellaneous">
+<h2><span class="section-number">4.5. </span>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-game-of-life">
+<h3><span class="section-number">4.5.1. </span>The Game of Life<a class="headerlink" href="#the-game-of-life" title="Permalink to this headline">¶</a></h3>
+<p>Conway was interested in a problem presented in the 1940s by mathematician John von Neumann, who attempted to find a hypothetical machine that could build copies of itself. The Game of Life emerged as Conway’s successful attempt to drastically simplify von Neumann’s ideas. From a theoretical point of view, it is interesting because it has the power of a universal Turing machine: that is, anything that can be computed algorithmically can be computed within Conway’s Game of Life.</p>
+<p><strong>Play with Conway’s Game of Life</strong> <a class="reference external" href="http://pmav.eu/stuff/javascript-game-of-life-v3.1.1/?rel=0">here</a>.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                    </div>
+                    
+                </main> <!-- .page__content -->
+                
+
+
+                <footer class="qe-page__footer">
+
+                    <p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png"></a></p>
+
+                    <p>Creative Commons License &ndash; This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International.</p>
+
+                </footer> <!-- .page__footer -->
+
+            </div> <!-- .page -->
+
+            
+
+            
+            <div class="qe-sidebar bd-sidebar inactive" id="site-navigation">
+
+                <div class="qe-sidebar__header">
+
+
+                    Contents
+
+                </div>
+
+                <nav class="qe-sidebar__nav" id="qe-sidebar-nav" aria-label="Main navigation">
+                    <ul class="current nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="oceandata.html">
+   1. Ocean Data Query
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="waveclimate.html">
+   2. Analysing Wave Climate
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coastevol.html">
+   3. Quantifying Coastal Changes
+  </a>
+ </li>
+ <li class="toctree-l1 current active active">
+  <a class="current reference internal" href="#">
+   4. Coral Reef Evolution
+  </a>
+ </li>
+</ul>
+
+                </nav>
+
+                <div class="qe-sidebar__footer">
+
+                </div>
+
+            </div> <!-- .sidebar -->
+            
+        </div> <!-- .main -->
+
+        <div class="qe-toolbar">
+
+            <div class="qe-toolbar__inner">
+
+                <ul class="qe-toolbar__main">
+                    <li data-tippy-content="Table of Contents" class="btn__sidebar"><i data-feather="menu"></i></li>
+                    <li data-tippy-content="Home"><a href="intro.html"><i data-feather="home"></i></a></li>
+                    <li class="btn__qelogo"><a href="https://www.sydney.edu.au/units" title=""><span class="show-for-sr">CoastProc</span></a></li>
+                    <!-- <li class="btn__search">
+                        <form action="search.html" method="get">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off">
+                            <i data-feather="search"></i>
+                        </form>
+                    </li> -->
+                </ul>
+
+                <ul class="qe-toolbar__links">
+                    <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
+                    <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
+                    <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
+                    <li data-tippy-content="Change contrast" class="btn__contrast"><i data-feather="sunset"></i></li>
+                    <li data-tippy-content="Download Notebook"><a href="_notebooks/reefmodel.ipynb" download><i data-feather="download-cloud"></i></a></li>
+                    <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
+                        <li class="download-pdf" id="downloadButton"><i data-feather="file"></i></li>
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/tristan-salles/CoastProc-book/tree/master/lectures/reefmodel.md" download><i data-feather="github"></i></a></li>
+                </ul>
+
+            </div>
+
+        </div> <!-- .toolbar -->
+        <div id="downloadPDFModal" style="display: none;">
+            <ul class="pdf-options" style="display: block;">
+                <li class="download-pdf-book" onClick="window.print()">
+                    <p>Lecture (PDF)</p>
+                </li>
+                <li class="download-pdf-file">
+                    <a href="_pdf/book.pdf" download><p>Book (PDF)</p></a>
+                </li>
+            </ul>
+        </div>
+        <div id="settingsModal" style="display: none;">
+            <p class="modal-title"> Notebook Launcher </p>
+            <div class="modal-desc">
+            <p>
+                Choose public or private cloud service for "Launch" button.
+            </p>
+            </div>
+            <p class="modal-subtitle">Select a server</p>
+            <ul class="modal-servers">
+            <li class="active launcher-public">
+                <span class="label">Public</span>
+                <select id="launcher-public-input">
+                
+                    <option value="https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master?urlpath=tree/reefmodel.ipynb">BinderHub</option>
+                
+                </select>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            <li class="launcher-private">
+                <span class="label">Private</span>
+                <input type="text" id="launcher-private-input" data-repourl="https://github.com/tristan-salles/CoastProc-notebooks" data-urlpath="tree/CoastProc-notebooks/reefmodel.ipynb" data-branch=master>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            </ul>
+            <p class="launch"><a href="https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master?urlpath=tree/reefmodel.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <script>
+                // QuantEcon Notebook Launcher
+                const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
+                // Highlight the server type if previous selection exists
+                if (typeof localStorage.launcherType !== 'undefined') {
+                  for (var i = 0; i < launcherTypeElements.length; i++) {
+                    launcherTypeElements[i].classList.remove('active');
+                    if ( launcherTypeElements[i].classList.contains(localStorage.launcherType) ) {
+                      launcherTypeElements[i].classList.add('active');
+                    }
+                  }
+                }
+                // Highlight server type on click and set local storage value
+                for (var i = 0; i < launcherTypeElements.length; i++) {
+                  launcherTypeElements[i].addEventListener('click', function() {
+                    for (var j = 0; j < launcherTypeElements.length; j++) {
+                      launcherTypeElements[j].classList.remove('active');
+                    }
+                    this.classList.add('active');
+                    if ( this.classList.contains('launcher-private') ) {
+                      localStorage.launcherType = 'launcher-private';
+                    } else if ( this.classList.contains('launcher-public') ) {
+                      localStorage.launcherType = 'launcher-public';
+                    }
+                    setLaunchServer();
+                  })
+                }
+                const launcherPublic = document.getElementById('launcher-public-input');
+                const launcherPrivate = document.getElementById('launcher-private-input');
+                const pageName = "reefmodel";
+                const repoURL = "https://github.com/tristan-salles/CoastProc-notebooks";
+                const urlPath = "tree/CoastProc-notebooks/reefmodel.ipynb";
+                const branch = "master"
+                const launchNotebookLink = document.getElementById('advancedLaunchButton');
+
+                // Highlight public server option if previous selection exists
+                if (typeof localStorage.launcherPublic !== 'undefined') {
+                  launcherPublic.value = localStorage.launcherPublic;
+                }
+                // Update local storage upon public server selection
+                launcherPublic.addEventListener('change', (event) => {
+                  setLaunchServer();
+                });
+                // Populate private server input if previous entry exists
+                if (typeof localStorage.launcherPrivate !== 'undefined') {
+                  launcherPrivate.value = localStorage.launcherPrivate;
+                }
+                // Update local storage when a private server is entered
+                launcherPrivate.addEventListener('input', (event) => {
+                  setLaunchServer();
+                });
+
+                // Function to update the "Launch Notebook" link href
+                function setLaunchServer() {
+                  launchNotebookLink.removeAttribute("style")
+                  if ( localStorage.launcherType == 'launcher-private' ) {
+                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    launcherPrivateValue = launcherPrivate.value
+                    if (!launcherPrivateValue) {
+                        launchNotebookLink.removeAttribute("href")
+                        launchNotebookLink.style.background = "grey"
+                        return
+                    }
+                    localStorage.launcherPrivate = launcherPrivateValue;
+                    privateServer = localStorage.launcherPrivate.replace(/\/$/, "")
+                    if (!privateServer.includes("http")) {
+                        privateServer = "http://" + privateServer
+                    }
+                    launchNotebookLinkURL = privateServer + repoPrefix;
+                  } else if ( localStorage.launcherType == 'launcher-public' ) {
+                    launcherPublicValue = launcherPublic.options[launcherPublic.selectedIndex].value;
+                    localStorage.launcherPublic = launcherPublicValue;
+                    launchNotebookLinkURL = localStorage.launcherPublic;
+                  }
+                  if (launchNotebookLinkURL) launchNotebookLink.href = launchNotebookLinkURL;
+                }
+                // Check if user has previously selected a server
+                if ( (typeof localStorage.launcherPrivate !== 'undefined') || (typeof localStorage.launcherPublic !== 'undefined') ) {
+                  setLaunchServer();
+                }
+                </script>
+
+        </div>
+
+    </div> <!-- .wrapper-->
+    
+  </body>
+</html>
