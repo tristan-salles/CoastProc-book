@@ -57,18 +57,25 @@ jobs:
         shell: bash -l {0}
         run: |
           jb build -W --keep-going lectures --path-output ./
-      - name: Save Build as Artifact
-        uses: actions/upload-artifact@v1
+      # Deploy the book's HTML to gh-pages branch
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: _build
-          path: _build
-      - name: Preview Deploy to Netlify
-        uses: nwtgck/actions-netlify@v1.1
-        with:
-          publish-dir: '_build/html/'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Preview Deploy from GitHub Actions"
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: book/_build/html
+
+      # - name: Save Build as Artifact
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: _build
+      #     path: _build
+      # - name: Preview Deploy to Netlify
+      #   uses: nwtgck/actions-netlify@v1.1
+      #   with:
+      #     publish-dir: '_build/html/'
+      #     production-branch: master
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     deploy-message: "Preview Deploy from GitHub Actions"
+      #   env:
+      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

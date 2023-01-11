@@ -10,7 +10,7 @@ sphinx:
         html_theme_options:
             header_organisation_url: https://www.sydney.edu.au/units
             header_organisation: CoastProc
-            repository_url: https://github.com/jstac/continuous_time_mcs
+            repository_url: https://github.com/tristan-salles/CoastProc-book
             nb_repository_url: https://github.com/TristanSalles/CoastProc/binder
             twitter: salles_tristan
             twitter_logo_url: https://iili.io/H7sltov.md.png
