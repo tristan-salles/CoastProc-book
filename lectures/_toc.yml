@@ -1,7 +1,0 @@
-format: jb-book
-root: intro
-options:
-  numbered: true
-chapters:
-  - file: oceandata
-  - file: zreferences
