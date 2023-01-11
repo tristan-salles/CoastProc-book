@@ -6,4 +6,5 @@ chapters:
   - file: oceandata
   - file: waveclimate
   - file: coastevol
+  - file: reefmodel
   # - file: zreferences
