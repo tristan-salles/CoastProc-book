@@ -377,7 +377,7 @@ Thus, climate oscillations can significantly modulate the wave climate around th
 
 ## Modeling & Analysis
 
-```{admonition}  To access the Notebooks exercises using the following link:
+```{admonition}  To access the Notebooks exercises use the following link:
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master)
 ```
 
@@ -401,6 +401,10 @@ Using **Jupyter Notebooks** as last week, you will:
 * Estimate the wave heights along Tropical Cyclone tracks.
 
 ### Exercises for the Practical
+
+```{important}
+You will need to download the practical information sheet available from **Canvas**.
+```
 
 Long-term observational data sets of beach profile variability and underlying trends that have been measured regularly and uninterrupted for several decades are very rare. Only a few sites around the world have sustained routine decadal-scale monitoring of the coastline, with notable examples that include the US Army Corps of Engineers Field Research Facility in the United States, the Hazaki Oceanographical Research Station in Japan, and Narrabeen-Collaroy Beach in Australia (http://www.narrabeen.wrl.unsw.edu.au).
 

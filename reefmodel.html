@@ -205,30 +205,28 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hands-on-examples">
-   4.4. Hands-on examples
+  <a class="reference internal nav-link" href="#miscellaneous">
+   4.4. Miscellaneous
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#d-model-of-coral-assemblages-evolution-not-used-from-2022">
-     4.4.1. 1D model of coral assemblages evolution (not used from 2022)
+    <a class="reference internal nav-link" href="#coral-community-mapping">
+     4.4.1. Coral Community mapping
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-model-of-coral-assemblages-evolution">
+     4.4.2. 1D model of coral assemblages evolution
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#carbonate-platform-evolution-since-the-last-lgm">
-     4.4.2. Carbonate platform evolution since the last LGM
+     4.4.3. Carbonate platform evolution since the last LGM
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#miscellaneous">
-   4.5. Miscellaneous
-  </a>
-  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-game-of-life">
-     4.5.1. The Game of Life
+     4.4.4. The Game of Life
     </a>
    </li>
   </ul>
@@ -324,6 +322,11 @@ Schematic figure of a hypothetical reef with transitions from shallow to deep as
 <div style="text-align: center; margin-bottom: 2em;">
 <iframe width="100%" height="350" src="https://www.youtube.com/embed/DhXHPzpyVPs?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+</div>
+<div class="toggle tip toggle-shown admonition">
+<p class="admonition-title">Reef modelling in 2D</p>
+<p>Click on the <strong>BinderHub</strong> button to run similar model as the one presented above (available in the folder <code class="docutils literal notranslate"><span class="pre">ReefModel</span></code>).
+<a class="reference external" href="https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 </div>
 </div>
 <div class="section" id="hydrodynamic-energy">
@@ -440,28 +443,36 @@ GBR geomorphology induced by carbonate platform from <a href="https://agupubs.on
 </div>
 </div>
 </div>
-<div class="section" id="hands-on-examples">
-<h2><span class="section-number">4.4. </span>Hands-on examples<a class="headerlink" href="#hands-on-examples" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="d-model-of-coral-assemblages-evolution-not-used-from-2022">
-<h3><span class="section-number">4.4.1. </span>1D model of coral assemblages evolution (not used from 2022)<a class="headerlink" href="#d-model-of-coral-assemblages-evolution-not-used-from-2022" title="Permalink to this headline">¶</a></h3>
-<p>Using <a class="reference external" href="https://www.geosci-model-dev.net/11/2093/2018/"><strong>pyReef</strong> model</a>, we will simulate  typical sequences of coral assemblages found in the GBR based on different initial conditions.</p>
+<div class="section" id="miscellaneous">
+<h2><span class="section-number">4.4. </span>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="coral-community-mapping">
+<h3><span class="section-number">4.4.1. </span>Coral Community mapping<a class="headerlink" href="#coral-community-mapping" title="Permalink to this headline">¶</a></h3>
+<p>Coral community informations are used to monitor coral reef threats and to improve our understanding of coastal ecosystems (more info <a class="reference external" href="https://www.nature.com/articles/s41597-021-00958-z">Reef Cover, a coral reef classification for global habitat mapping from remote sensing</a>).</p>
+<div class="toggle tip toggle-shown admonition">
+<p class="admonition-title">Reef community mapping</p>
+<p>Click on the <strong>BinderHub</strong> button to use different clustering methods used to automatically build geomorphic and benthic maps (see the <a class="reference external" href="https://allencoralatlas.org/atlas/#12.35/-23.5039/152.0834">Allen Coral Atlas maps</a> for some examples.</p>
+<p><a class="reference external" href="https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
+</div>
+</div>
+<div class="section" id="d-model-of-coral-assemblages-evolution">
+<h3><span class="section-number">4.4.2. </span>1D model of coral assemblages evolution<a class="headerlink" href="#d-model-of-coral-assemblages-evolution" title="Permalink to this headline">¶</a></h3>
+<p>A rather simple 1D model called <a class="reference external" href="https://www.geosci-model-dev.net/11/2093/2018/"><strong>pyReef</strong></a> could be used to simulate  typical sequences of coral assemblages found in the GBR based on different initial conditions.</p>
 <div class="figure align-center" id="pyreef-model-example">
 <a class="reference internal image-reference" href="_images/pyreef1.jpg"><img alt="_images/pyreef1.jpg" src="_images/pyreef1.jpg" style="width: 654.12px; height: 395.83000000000004px;" /></a>
 </div>
-<p style="text-align:center; font-size:12px;">**pyReef** model outputs used in this exercise.</p>
+<p style="text-align:center; font-size:12px;">Example of pyReef model outputs.</p>
 </div>
 <div class="section" id="carbonate-platform-evolution-since-the-last-lgm">
-<h3><span class="section-number">4.4.2. </span>Carbonate platform evolution since the last LGM<a class="headerlink" href="#carbonate-platform-evolution-since-the-last-lgm" title="Permalink to this headline">¶</a></h3>
-<p>With <a class="reference external" href="https://www.nature.com/articles/s41598-018-23519-8">badlands</a>, you will simulate the evolution of a carbonate platform over the last 10,000 years accounting for the impact of waves, sediment transport and sea-level changes.</p>
-<!-- .. image:: https://mybinder.org/badge_logo.svg
-  :target: https://mybinder.org/v2/gh/badlands-model/badlands-docker/binder?urlpath=tree/gbr/runModel.ipynb -->
-<p>Click on the link above to start running the simulation in a <strong>Jupyter Notebook</strong>.</p>
+<h3><span class="section-number">4.4.3. </span>Carbonate platform evolution since the last LGM<a class="headerlink" href="#carbonate-platform-evolution-since-the-last-lgm" title="Permalink to this headline">¶</a></h3>
+<p>As we saw <a class="reference external" href="https://www.nature.com/articles/s41598-018-23519-8">badlands</a> could be used to simulate the evolution of a carbonate platform over geological timescales (thousands to millions of years) accounting for the impact of waves, sediment transport and sea-level changes.</p>
+<div class="toggle tip admonition">
+<p class="admonition-title">Long-term carbonate modelling with Badlands</p>
+<p>Click on the <strong>BinderHub</strong> button to run a long-term model of reefs in the Great Barrier Reef.
+<a class="reference external" href="https://mybinder.org/v2/gh/badlands-model/badlands-docker/binder?urlpath=tree/gbr/runModel.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 </div>
 </div>
-<div class="section" id="miscellaneous">
-<h2><span class="section-number">4.5. </span>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="the-game-of-life">
-<h3><span class="section-number">4.5.1. </span>The Game of Life<a class="headerlink" href="#the-game-of-life" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.4.4. </span>The Game of Life<a class="headerlink" href="#the-game-of-life" title="Permalink to this headline">¶</a></h3>
 <p>Conway was interested in a problem presented in the 1940s by mathematician John von Neumann, who attempted to find a hypothetical machine that could build copies of itself. The Game of Life emerged as Conway’s successful attempt to drastically simplify von Neumann’s ideas. From a theoretical point of view, it is interesting because it has the power of a universal Turing machine: that is, anything that can be computed algorithmically can be computed within Conway’s Game of Life.</p>
 <p><strong>Play with Conway’s Game of Life</strong> <a class="reference external" href="http://pmav.eu/stuff/javascript-game-of-life-v3.1.1/?rel=0">here</a>.</p>
 </div>
