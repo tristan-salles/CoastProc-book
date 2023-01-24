@@ -63,10 +63,16 @@ a lot to cover, it is also recommended to go through each chapter prior to the l
 prepared and able to get the most of it during classes.
 ```
 
+```{admonition}  Enable online exercises and practicals related notebooks:
+:class: toggle
+Clicking on the following binder badge: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master)
+```
+
 <!-- Code is written in Python and accelerated using -->
 <!-- JIT compilation via [Numba](http://numba.pydata.org/).  QuantEcon provides an -->
 <!-- [introduction to these topics](https://python-programming.quantecon.org/). -->
 
+### Chapters
 
 ```{tableofcontents}
 ```

@@ -79,6 +79,13 @@ The 2 movies above are based on a numerical model of reef architecture evolution
 </div>
 ```
 
+```{admonition} Reef modelling in 2D
+:class: toggle, tip, toggle-shown
+
+Click on the **BinderHub** button to run similar model as the one presented above (available in the folder `ReefModel`).
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master)
+```
+
 ### Hydrodynamic energy
 
 At the organism level, **currents**, **water flow** and **oscillatory motion** induced by waves are critical in modulating physiological processes in coral and thus influencing coral growth rates.
@@ -237,11 +244,24 @@ Additionally, steep platform topography triggers incision of slope canyons by hy
 Results demonstrate the essential role of carbonate platform topography in modulating key bedload processes, and therefore exert direct control on the development of various geomorphological features within the shelf, slope, and basin environments.
 ```
 
-## Hands-on examples
 
-### 1D model of coral assemblages evolution (not used from 2022)
+## Miscellaneous
 
-Using [**pyReef** model](https://www.geosci-model-dev.net/11/2093/2018/), we will simulate  typical sequences of coral assemblages found in the GBR based on different initial conditions.
+### Coral Community mapping
+
+Coral community informations are used to monitor coral reef threats and to improve our understanding of coastal ecosystems (more info [Reef Cover, a coral reef classification for global habitat mapping from remote sensing](https://www.nature.com/articles/s41597-021-00958-z)).
+
+```{admonition} Reef community mapping
+:class: toggle, tip, toggle-shown
+
+Click on the **BinderHub** button to use different clustering methods used to automatically build geomorphic and benthic maps (see the [Allen Coral Atlas maps](https://allencoralatlas.org/atlas/#12.35/-23.5039/152.0834) for some examples.
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master)
+```
+
+### 1D model of coral assemblages evolution
+
+A rather simple 1D model called [**pyReef**](https://www.geosci-model-dev.net/11/2093/2018/) could be used to simulate  typical sequences of coral assemblages found in the GBR based on different initial conditions.
 
 ```{figure}  images/pyreef1.jpg
 ---
@@ -250,19 +270,18 @@ align: center
 name: pyreef model example.
 ---
 ```
-<p style="text-align:center; font-size:12px;">**pyReef** model outputs used in this exercise.</p>
+<p style="text-align:center; font-size:12px;">Example of pyReef model outputs.</p>
 
 ### Carbonate platform evolution since the last LGM
 
-With [badlands](https://www.nature.com/articles/s41598-018-23519-8), you will simulate the evolution of a carbonate platform over the last 10,000 years accounting for the impact of waves, sediment transport and sea-level changes.
+As we saw [badlands](https://www.nature.com/articles/s41598-018-23519-8) could be used to simulate the evolution of a carbonate platform over geological timescales (thousands to millions of years) accounting for the impact of waves, sediment transport and sea-level changes.
 
-<!-- .. image:: https://mybinder.org/badge_logo.svg
-  :target: https://mybinder.org/v2/gh/badlands-model/badlands-docker/binder?urlpath=tree/gbr/runModel.ipynb -->
+```{admonition} Long-term carbonate modelling with Badlands
+:class: toggle, tip
 
-Click on the link above to start running the simulation in a **Jupyter Notebook**.
-
-
-## Miscellaneous
+Click on the **BinderHub** button to run a long-term model of reefs in the Great Barrier Reef.
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/badlands-model/badlands-docker/binder?urlpath=tree/gbr/runModel.ipynb)
+```
 
 ### The Game of Life
 

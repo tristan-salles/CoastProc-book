@@ -171,7 +171,7 @@ name: AODN web portal.
 
 ## Modeling & Analysis
 
-```{admonition}  To access the Notebooks exercises using the following link:
+```{admonition}  To access the Notebooks exercises use the following link:
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master)
 ```
 
@@ -235,6 +235,10 @@ In this second example (`OceanData2.ipynb`), the Australian Coastal Ocean Radar 
 ```
 
 ### Exercises for the Practical
+
+```{important}
+You will need to download the practical information sheet available from **Canvas**.
+```
 
 You will run a series of examples that will introduce some aspects of marine data querying.
 * Offshore Sydney wave buoy data from Australian Integrated Marine Observing System (IMOS) and

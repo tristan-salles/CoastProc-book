@@ -104,7 +104,8 @@ $$
 ```{admonition} **Exercise**
 :class: toggle, tip
 
-Open the **BinderHub** link in the menubar to assess 2 runup models and evaluate wave runup observations against the Iribarren number with the above link.
+Open the **BinderHub** link to assess 2 runup models (folder `BeachProcesses`) and evaluate wave runup observations against the Iribarren number with the above link.
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master)
 ```
 
 ### Beach profiles
@@ -400,16 +401,20 @@ Marine sediments are further mobilised by a diffusion law similar to the one ref
 
 ```{admonition} Long-term, reduced complexity model
 :class: toggle, tip, toggle-shown
-Click on the **BinderHub** button in the menubar to run the described long-term model around Fraser Island.
+Click on the **BinderHub** button to run the long-term model around Fraser Island notebook in the `LongTerm` folder.
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master)
 ```
 
 ## Exercises for the Practical
 
-```{admonition}  To access the Notebooks exercises using the following link:
+```{admonition}  To access the Notebooks for the practical
+Folder: `CoastEvol_Prac` using the following link:
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tristan-salles/CoastProc-notebooks/master)
 ```
 
-Through these exercises, you will use **beach survey program** to evaluate long term changes in shoreline trajectory and run **longshore drift models** to evaluate the impact of wave height and direction on embayed beaches morphologies.
+Through the provided notebooks, you will look at the evolution of coastal system in 2D and explore the complex interactions between hydrodynamics and morphodynamics using two types of model **COVE** and **CEM** models.
+
+Through the notes and the notebooks, you will evaluate the processes and evolution taking place along coastal regions including natural shoreline morphologies and embayed beaches.
 
 ```{important}
 You will need to download the practical information sheet available from **Canvas**.
