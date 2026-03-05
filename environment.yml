@@ -14,7 +14,5 @@ dependencies:
     - ghp-import==1.1.0
     - sphinxcontrib-youtube
     - sphinx-proof
-    - pybtex<0.25
-    - sphinxcontrib-bibtex>=2.5.0
     - quantecon
 
