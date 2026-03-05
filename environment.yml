@@ -6,6 +6,8 @@ dependencies:
   - anaconda=2021.11
   - pip
   - pip:
+    - pybtex>=0.22.0,<0.25
+    - sphinxcontrib-bibtex
     - jupyter-book==0.12.1
     - quantecon-book-theme==0.3.0
     - sphinx-tojupyter==0.2.0
