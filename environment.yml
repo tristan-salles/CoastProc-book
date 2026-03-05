@@ -15,4 +15,6 @@ dependencies:
     - sphinxcontrib-youtube
     - sphinx-proof
     - quantecon
+    - sphinxcontrib-bibtex>=2.2.0
+    - pybtex<0.25
 
